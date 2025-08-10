@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/model/setting_model.dart';
 
 class SettingPage extends StatefulWidget{
   @override
@@ -9,123 +10,141 @@ class SettingPage extends StatefulWidget{
 
 }
 class SettingPageState extends State<SettingPage>{
+  List<SettingGroup> settingDataList = [
+    SettingGroup(
+        "Account", 
+        [
+          SettingModel(
+              Icons.settings_outlined, 
+              "General"
+          ),
+          SettingModel(
+              Icons.switch_account_outlined,
+              "Switch account"
+          ),
+          SettingModel(
+              Icons.family_restroom_outlined,
+              "Family Centre"
+          ),
+          SettingModel(
+              Icons.notifications_none_outlined,
+              "Notifications"
+          ),
+          SettingModel(
+              Icons.card_membership,
+              "Purchases and memberships"
+          ),
+          SettingModel(
+              Icons.credit_card,
+              "Billing and payments"
+          ),
+          SettingModel(
+              Icons.manage_history_outlined,
+              "Manage all history"
+          ),
+          SettingModel(
+              Icons.person_pin_outlined,
+              "Your data in YouTube"
+          ),
+          SettingModel(
+              Icons.lock_outline,
+              "Privacy"
+          ),
+          SettingModel(
+              Icons.circle_outlined,
+              "connected apps"
+          ),
+          SettingModel(
+              Icons.filter_alt_outlined,
+              "Try experimental new features"
+          )
+        ]
+    ),
+    SettingGroup(
+        "Video and audio preferences",
+        [
+          SettingModel(
+              Icons.videocam_outlined,
+             " Video quallity preferences"
+          ),
+          SettingModel(
+              Icons.play_arrow_outlined,
+              "Playback"
+          ),
+          SettingModel(
+              Icons.closed_caption_off_outlined,
+              "Captions"
+          ),
+          SettingModel(
+              Icons.add_road_outlined, 
+              "Data saving"
+          ),
+          SettingModel(
+              Icons.arrow_downward_outlined, 
+              "Downloads"
+          ),
+          SettingModel(
+              Icons.accessibility_new_outlined,
+              "Accessibility"
+          ),
+          SettingModel(
+              Icons.screenshot_monitor_outlined,
+              "Watch on TV"
+          )
+        ]
+    ),
+    SettingGroup(
+        "Help and policy",
+      [
+        SettingModel(
+            Icons.help_outline_outlined,
+            "Help"
+        ),
+        SettingModel(
+            Icons.file_open,
+            "YouTube Terms of Service"
+        ),
+        SettingModel(
+            Icons.feedback_outlined,
+            "Send Feedback"
+        ),
+        SettingModel(
+            Icons.info_outline_rounded,
+            "About"
+        ),
+      ]
+    )
+  ];
+
   @override
   Widget build(BuildContext context) {
    return Scaffold(
      appBar: AppBar(
        title: Text("Settings"),
      ),
-     body: ListView(
-       children: [
-         Padding(
-           padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
-           child: Text("Account", style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-         ),
-         ListTile(
-           title: Text("General"),
-           leading: Icon(Icons.settings_outlined),
-         ),
-         ListTile(
-           title: Text("Switch account"),
-           leading: Icon(Icons.switch_account_outlined),
-         ),
-         ListTile(
-           title: Text("Family Centre"),
-           leading: Icon(Icons.family_restroom_outlined),
-         ),
-         ListTile(
-           title: Text("Notifications"),
-           leading: Icon(Icons.notifications_none_outlined),
-         ),
-        ListTile(
-        title: Text("Purchases and memberships"),
-        leading: Icon(Icons.card_membership),
-        ),
-         ListTile(
-           title: Text("Billing and payments"),
-           leading: Icon(Icons.credit_card),
-         ),
-         ListTile(
-           title: Text("Manage all history"),
-           leading: Icon(Icons.manage_history_outlined),
-         ),
-         ListTile(
-           title: Text("Your data in YouTube"),
-           leading: Icon(Icons.person_pin_outlined),
-         ),
-         ListTile(
-           title: Text("Privacy"),
-           leading: Icon(Icons.lock_outline),
-         ),
-         ListTile(
-           title: Text("connected apps"),
-           leading: Icon(Icons.circle_outlined),
-         ),
-         ListTile(
-           title: Text("Try experimental new features"),
-           leading: Icon(Icons.filter_alt_outlined),
-         ),
-         Divider(
-
-         ),
-         Padding(
-             padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
-           child: Text("Video and audio preference",style: TextStyle(fontSize: 20,fontWeight:  FontWeight.bold ),),
-         ),
-         ListTile(
-           title: Text("Video quallity preferences"),
-           leading: Icon(Icons.videocam_outlined),
-         ),
-         ListTile(
-           title: Text("Playback"),
-           leading: Icon(Icons.play_arrow_outlined),
-         ),
-         ListTile(
-           title: Text("Captions"),
-           leading: Icon(Icons.closed_caption_off_outlined),
-         ),
-         ListTile(
-           title: Text("Data saving"),
-           leading: Icon(Icons.add_road_outlined),
-         ),
-         ListTile(
-           title: Text("Downloads"),
-           leading: Icon(Icons.arrow_downward_outlined),
-         ),
-         ListTile(
-           title: Text("Accessibility"),
-           leading: Icon(Icons.accessibility_new_outlined),
-         ),
-         ListTile(
-           title: Text("Watch on TV"),
-           leading: Icon(Icons.screenshot_monitor_outlined),
-         ),
-         Divider(
-
-         ),
-         Padding(
-             padding:EdgeInsets.symmetric(vertical: 10,horizontal: 20),
-          child: Text("Help and policy",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-         ),
-        ListTile(
-          title: Text("Help"),
-          leading: Icon(Icons.help_outline_outlined),
-        ),
-         ListTile(
-           title: Text("YouTube Terms of Service"),
-           leading: Icon(Icons.file_open),
-         ),
-         ListTile(
-           title: Text("Send feedback"),
-           leading: Icon(Icons.feedback_outlined),
-         ),
-         ListTile(
-           title: Text("About"),
-           leading: Icon(Icons.info_outline_rounded),
-         )
-
-       ],
-     ),
+     body: ListView.separated(
+         itemCount: settingDataList.length,
+         separatorBuilder: (BuildContext context, int index){
+           return Divider();
+         },
+         itemBuilder: (BuildContext context, int index){
+           return Column(
+             crossAxisAlignment: CrossAxisAlignment.start,
+             children: [
+               Padding(
+                 padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+                 child: Text(settingDataList[index].title, style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+               ),
+               ...settingDataList[index].contents.map((item){
+                 return ListTile(
+                   title: Text(item.text),
+                   leading: Icon(item.icon),
+                 );
+               })
+             ],
+           );
+         }
+     )
    );
    
   }
