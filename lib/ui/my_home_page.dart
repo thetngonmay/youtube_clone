@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/ui/setting_page.dart';
+import 'package:youtube_clone/ui/widgets/music_card.dart';
 
 import 'notification_page.dart';
 
@@ -40,27 +41,17 @@ class MyhomepageState extends State<Myhomepage>{
           IconButton(onPressed: onSettingClick, icon: Icon(Icons.settings))
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text("Thet Ngon", style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-            Text("12 December 2000", style: TextStyle(fontStyle: FontStyle.italic, fontWeight: FontWeight.bold, color: Colors. blue),),
-            Text("Yangon",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400), ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text("091232342"),
-                SizedBox(width: 10,),
-                Text("092525252"),
-              ],
-            )
-          ],
-        ),
+      body: ListView.builder(
+        itemCount: 1,
+          itemBuilder: (BuildContext context, int index){
+          return MusicCard();
+          }
       ),
     );
   }
 
+
+  void onMoreClick() {
+
+  }
 }

@@ -1,7 +1,7 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/ui/search_page.dart';
+import 'package:youtube_clone/ui/widgets/notification_card.dart';
 
 class NotificationPage extends StatefulWidget {
   @override
@@ -38,6 +38,12 @@ class NotificationPageState extends State<NotificationPage>{
 
           ],
         ),
+      body: ListView.builder(
+        itemCount: 10,
+          itemBuilder: (BuildContext context,int index){
+          return NotificationCard();
+          }
+      )
     );
 
   }
