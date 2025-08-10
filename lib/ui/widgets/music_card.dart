@@ -1,7 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/model/music_model.dart';
 
 class MusicCard extends StatelessWidget{
+  final MusicModel data;
+
+  const MusicCard({super.key, required this.data});
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -14,12 +18,15 @@ class MusicCard extends StatelessWidget{
                 child: Stack(
                   children: [
                     CachedNetworkImage(
+                      width: double.infinity,
+                      height: 200,
+                      fit: BoxFit.cover,
                       progressIndicatorBuilder: (context, url, progress) => Center(
                         child: CircularProgressIndicator(
                           value: progress.progress,
                         ),
                       ),
-                      imageUrl: "https://c.files.bbci.co.uk/048c/live/2bb03f70-1753-11ef-b507-edbcd7518f5c.jpg"
+                      imageUrl: data.videoImage
                     ),
                     Positioned(
                       right: 7,
@@ -33,8 +40,9 @@ class MusicCard extends StatelessWidget{
                         child: Row(
                           children: [
                             Icon(Icons.music_note, color: Colors.white,),
-                            Text("5:12",style: TextStyle(color: Colors.white),)
+                            Text(data.durationTime,style: TextStyle(color: Colors.white),)
                           ],
+                          
                         ),
                       ),
                     )
@@ -47,7 +55,7 @@ class MusicCard extends StatelessWidget{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CircleAvatar(
-                      backgroundImage: AssetImage("images/mileycyrus.jpeg"),
+                      backgroundImage: CachedNetworkImageProvider(data.channelProfileurl),
                       radius: 30,
                     ),
                     Expanded(
@@ -56,23 +64,23 @@ class MusicCard extends StatelessWidget{
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Miley Cyrus - Flowers (Official Video",style: TextStyle(fontSize: 16),),
+                            Text(data.musicTitle,style: TextStyle(fontSize: 16),),
                             Wrap(
                               spacing: 5,
                               children: [
-                                Text("Maung Maung(Musical Entertainment)"),
+                                Text(data.channelName),
                                 Container(
                                   color: Colors.grey,
                                   width: 2,
                                   height: 2,
                                 ),
-                                Text("118k views"),
+                                Text("${data.viewCount} views"),
                                 Container(
                                   color: Colors.grey,
                                   width: 2,
                                   height: 2,
                                 ),
-                                Text("2 weeks ago")
+                                Text(data.date)
 
                               ],
                             )
