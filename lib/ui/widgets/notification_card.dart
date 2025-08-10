@@ -25,14 +25,17 @@ class NotificationCard extends StatelessWidget{
                              ),
               ),
             ),
-      Image(
-          image: AssetImage("images/mileycyrus.jpeg"),
-        width: 100,
+            ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(15)),
+              child: Image(
+                  image: AssetImage("images/mileycyrus.jpeg"),
+                width: 100,
+              ),
+            ),
+            IconButton(onPressed: onMoreClick, icon: Icon(Icons.more_vert),)
+         ]
+       ),
       ),
-       IconButton(onPressed: onMoreClick, icon: Icon(Icons.more_vert),)     
-      ]
-    ),
-    ),
     );
   }
 
