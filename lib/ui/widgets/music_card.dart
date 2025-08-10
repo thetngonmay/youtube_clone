@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class MusicCard extends StatelessWidget{
@@ -13,7 +13,14 @@ class MusicCard extends StatelessWidget{
               Container(
                 child: Stack(
                   children: [
-                    Image(image: AssetImage("images/flower.jpg")),
+                    CachedNetworkImage(
+                      progressIndicatorBuilder: (context, url, progress) => Center(
+                        child: CircularProgressIndicator(
+                          value: progress.progress,
+                        ),
+                      ),
+                      imageUrl: "https://c.files.bbci.co.uk/048c/live/2bb03f70-1753-11ef-b507-edbcd7518f5c.jpg"
+                    ),
                     Positioned(
                       right: 7,
                       bottom: 7,
