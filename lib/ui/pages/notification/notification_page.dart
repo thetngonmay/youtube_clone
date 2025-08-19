@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/model/notification_model.dart';
-import 'package:youtube_clone/ui/search_page.dart';
-import 'package:youtube_clone/ui/setting_page.dart';
+import 'package:youtube_clone/ui/pages/search/search_page.dart';
+import 'package:youtube_clone/ui/pages/setting/setting_page.dart';
 import 'package:youtube_clone/ui/widgets/notification_card.dart';
 
 class NotificationPage extends StatefulWidget {

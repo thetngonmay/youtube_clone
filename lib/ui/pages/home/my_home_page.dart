@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/model/music_model.dart';
-import 'package:youtube_clone/ui/setting_page.dart';
+import 'package:youtube_clone/ui/pages/setting/setting_page.dart';
 import 'package:youtube_clone/ui/widgets/music_card.dart';
 
-import 'notification_page.dart';
+import '../notification/notification_page.dart';
 
 class Myhomepage extends StatefulWidget{
 
@@ -24,7 +24,7 @@ class MyhomepageState extends State<Myhomepage>{
         "Billie Eilish",
         "https://assets.vogue.com/photos/609bb445758287e5e091eeed/master/w_2560%2Cc_limit/Billie-Eilish-Happier-Than-Ever.jpeg",
         "4:12",
-        "234k views",
+        "234k",
         "1 month"
     ),
     MusicModel(
