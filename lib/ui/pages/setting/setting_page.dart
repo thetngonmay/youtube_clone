@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/model/setting_model.dart';
+import 'package:youtube_clone/ui/pages/setting/general_setting_page.dart';
 
 class SettingPage extends StatefulWidget{
   @override
@@ -137,6 +138,15 @@ class SettingPageState extends State<SettingPage>{
                ),
                ...settingDataList[index].contents.map((item){
                  return ListTile(
+                   onTap: (){
+                     if(item.text == "General"){
+                       Navigator.push(
+                           context,
+                           MaterialPageRoute(builder: (context)=> GeneralSettingPage()));
+                     } else if(item.text == ""){
+
+                     }
+                   },
                    title: Text(item.text),
                    leading: Icon(item.icon),
                  );
