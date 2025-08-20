@@ -49,7 +49,6 @@ class MusicCard extends StatelessWidget{
                               Icon(Icons.music_note, color: Colors.white,),
                               Text(data.durationTime,style: TextStyle(color: Colors.white),)
                             ],
-
                           ),
                         ),
                       )
