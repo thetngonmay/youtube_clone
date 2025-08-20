@@ -77,7 +77,8 @@ class MyhomepageState extends State<Myhomepage>{
           itemBuilder: (BuildContext context, int index){
           return MusicCard(data: musicDataList[
             index
-          ],);
+          ],
+          );
           }
       ),
     );
