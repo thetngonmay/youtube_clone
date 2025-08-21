@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/model/setting_model.dart';
+import 'package:youtube_clone/ui/pages/setting/billing_and_payments.dart';
+import 'package:youtube_clone/ui/pages/setting/connected_apps_page.dart';
 import 'package:youtube_clone/ui/pages/setting/general_setting_page.dart';
+import 'package:youtube_clone/ui/pages/setting/notification_setting_page.dart';
+import 'package:youtube_clone/ui/pages/setting/privacy_page.dart';
+import 'package:youtube_clone/ui/pages/setting/switch_account_setting_page.dart';
 
 class SettingPage extends StatefulWidget{
   @override
@@ -138,13 +143,39 @@ class SettingPageState extends State<SettingPage>{
                ),
                ...settingDataList[index].contents.map((item){
                  return ListTile(
-                   onTap: (){
-                     if(item.text == "General"){
+                   onTap: () {
+                     if (item.text == "General") {
                        Navigator.push(
                            context,
-                           MaterialPageRoute(builder: (context)=> GeneralSettingPage()));
-                     } else if(item.text == ""){
-
+                           MaterialPageRoute(
+                               builder: (context) => GeneralSettingPage()));
+                     }
+                     else if (item.text == "Switch account") {
+                       Navigator.push(context,
+                           MaterialPageRoute(builder: (context) =>
+                               SwitchAccountSettingPage()));
+                     }
+                     else if (item.text == "Notifications") {
+                       Navigator.push(
+                           context,
+                           MaterialPageRoute(builder: (context) =>
+                               NotificationSettingPage()));
+                     }
+                     else if (item.text == "Billing and payments") {
+                       Navigator.push(
+                           context,
+                           MaterialPageRoute(
+                               builder: (context) => BillingAndPaymentsPage()));
+                     }
+                     else if (item.text == "Privacy") {
+                       Navigator.push(context,
+                           MaterialPageRoute(
+                               builder: (context) => PrivacyPage()));
+                     }
+                     else if (item.text == "Primary") {
+                       Navigator.push(context,
+                           MaterialPageRoute(
+                               builder: (context) => ConnectedAppsPage()));
                      }
                    },
                    title: Text(item.text),
@@ -156,7 +187,7 @@ class SettingPageState extends State<SettingPage>{
          }
      )
    );
-   
   }
-  
 }
+
+
