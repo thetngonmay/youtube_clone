@@ -4,8 +4,10 @@ import 'package:youtube_clone/ui/pages/setting/billing_and_payments.dart';
 import 'package:youtube_clone/ui/pages/setting/connected_apps_page.dart';
 import 'package:youtube_clone/ui/pages/setting/general_setting_page.dart';
 import 'package:youtube_clone/ui/pages/setting/notification_setting_page.dart';
+import 'package:youtube_clone/ui/pages/setting/playback_page.dart';
 import 'package:youtube_clone/ui/pages/setting/privacy_page.dart';
 import 'package:youtube_clone/ui/pages/setting/switch_account_setting_page.dart';
+import 'package:youtube_clone/ui/pages/setting/video_quality_preferences_page.dart';
 
 class SettingPage extends StatefulWidget{
   @override
@@ -71,7 +73,7 @@ class SettingPageState extends State<SettingPage>{
         [
           SettingModel(
               Icons.videocam_outlined,
-             " Video quallity preferences"
+             " Video quality preferences"
           ),
           SettingModel(
               Icons.play_arrow_outlined,
@@ -172,10 +174,20 @@ class SettingPageState extends State<SettingPage>{
                            MaterialPageRoute(
                                builder: (context) => PrivacyPage()));
                      }
-                     else if (item.text == "Primary") {
+                     else if (item.text == "connected apps") {
                        Navigator.push(context,
                            MaterialPageRoute(
                                builder: (context) => ConnectedAppsPage()));
+                     }
+                     else if (item.text == "Video quality preferences") {
+                       Navigator.push(context,
+                           MaterialPageRoute(
+                               builder: (context) => VideoQualityPreferencesPage()));
+                     }
+                     else if (item.text == "Playback") {
+                       Navigator.push(context,
+                           MaterialPageRoute(
+                               builder: (context) => PlaybackPage()));
                      }
                    },
                    title: Text(item.text),

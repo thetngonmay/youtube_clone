@@ -21,7 +21,7 @@ class ConnectedAppsPageState extends State<ConnectedAppsPage>{
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CircleAvatar(
