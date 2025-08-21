@@ -7,7 +7,12 @@ import 'package:youtube_clone/ui/pages/setting/notification_setting_page.dart';
 import 'package:youtube_clone/ui/pages/setting/playback_page.dart';
 import 'package:youtube_clone/ui/pages/setting/privacy_page.dart';
 import 'package:youtube_clone/ui/pages/setting/switch_account_setting_page.dart';
-import 'package:youtube_clone/ui/pages/setting/video_quality_preferences_page.dart';
+
+import 'about_page.dart' show AboutPage;
+import 'accessbility_page.dart';
+import 'data_saving_page.dart';
+import 'downloads_page.dart' show DownloadsPage;
+import 'video_quality_page.dart';
 
 class SettingPage extends StatefulWidget{
   @override
@@ -179,16 +184,33 @@ class SettingPageState extends State<SettingPage>{
                            MaterialPageRoute(
                                builder: (context) => ConnectedAppsPage()));
                      }
-                     else if (item.text == "Video quality preferences") {
-                       Navigator.push(context,
-                           MaterialPageRoute(
-                               builder: (context) => VideoQualityPreferencesPage()));
-                     }
                      else if (item.text == "Playback") {
                        Navigator.push(context,
                            MaterialPageRoute(
                                builder: (context) => PlaybackPage()));
                      }
+                     else if (item.text == "Data saving") {
+                       Navigator.push(context,
+                           MaterialPageRoute(
+                               builder: (context) => DataSavingPage()));
+                     }
+                     else if (item.text=="Downloads"){
+                       Navigator.push(context,
+                           MaterialPageRoute(builder: (context) => DownloadsPage()));
+                     }
+                     else if(item.text=="Accessibility"){
+                       Navigator.push(context,
+                           MaterialPageRoute(builder: (context)=> AccessbilityPage()));
+                     }
+                     else if(item.text=="About"){
+                       Navigator.push(context,
+                           MaterialPageRoute(builder: (context)=> AboutPage()));
+                     }
+                     else if(item.text=="Video quality preferences"){
+                       Navigator.push(context,
+                           MaterialPageRoute(builder: (context)=>VideoQualityPage()));
+                     }
+
                    },
                    title: Text(item.text),
                    leading: Icon(item.icon),
