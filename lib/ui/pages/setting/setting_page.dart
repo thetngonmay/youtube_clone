@@ -12,6 +12,7 @@ import 'about_page.dart' show AboutPage;
 import 'accessbility_page.dart';
 import 'data_saving_page.dart';
 import 'downloads_page.dart' show DownloadsPage;
+import 'help_page.dart' show HelpPage;
 import 'video_quality_page.dart';
 
 class SettingPage extends StatefulWidget{
@@ -209,6 +210,10 @@ class SettingPageState extends State<SettingPage>{
                      else if(item.text=="Video quality preferences"){
                        Navigator.push(context,
                            MaterialPageRoute(builder: (context)=>VideoQualityPage()));
+                     }
+                     else if(item.text=="Help"){
+                       Navigator.push(context,
+                           MaterialPageRoute(builder: (context)=>HelpPage()));
                      }
 
                    },

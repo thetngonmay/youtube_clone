@@ -12,19 +12,25 @@ class ChannelSubscribeView extends StatelessWidget{
       padding: EdgeInsets.only(left: 15, right: 15, top: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              CircleAvatar(
-                backgroundImage: CachedNetworkImageProvider(
-                    data.channelProfileurl),
-              ),
-              SizedBox(width: 10,),
-              Text(data.channelName, style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),)
-            ],
+          Expanded(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CircleAvatar(
+                  backgroundImage: CachedNetworkImageProvider(
+                      data.channelProfileurl),
+                ),
+                SizedBox(width: 10,),
+                Flexible(
+                  child: Text(data.channelName, style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),),
+                )
+              ],
+            ),
           ),
           TextButton(
               style: TextButton.styleFrom(
@@ -39,8 +45,6 @@ class ChannelSubscribeView extends StatelessWidget{
       ),
     );
   }
-
-
   void onSubscribeClick() {
   }
 }
