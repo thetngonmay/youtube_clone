@@ -8,7 +8,8 @@ class PlaybackPage extends StatefulWidget{
   }
 }
 class PlaybackPageState extends State<PlaybackPage>{
-  bool isSwitched=false;
+  bool _autoPlay=false;
+  bool _zoomToFill=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,14 +23,11 @@ class PlaybackPageState extends State<PlaybackPage>{
           title: Text("Auto-play next video"),
           subtitle: Text("When auto-play is enabled,a suggessted video will automatically play next"),
           trailing: Switch(
-              value: isSwitched,
-              onChanged: (newValue) {
-                setState(() {
-                  isSwitched = newValue;
-                });
-              }
+              value: _autoPlay,
+              onChanged: (value)=>
+                setState(() => _autoPlay=value),
           ),
-        ),
+          ),
                 ListTile(
                   title: Text("Double-tap to seek"),
                   subtitle: Text("10 seconds"),
@@ -38,17 +36,14 @@ class PlaybackPageState extends State<PlaybackPage>{
                   title: Text("Zoom to fill screen"),
                   subtitle: Text("Always zoom so that video fill the screen in full screen"),
                   trailing: Switch(
-                      value: isSwitched,
-                      onChanged: (newValue) {
-                        setState(() {
-                          isSwitched = newValue;
-                        });
-                      }
+                      value: _zoomToFill,
+                      onChanged: (value)=>
+                        setState(() => _zoomToFill = value),
                   ),
-                ),
-      ],
-      )
+                  ),
+                ]
     ),
+        )
     );
   }
 

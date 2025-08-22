@@ -9,7 +9,14 @@ class DataSavingPage extends StatefulWidget{
 
 }
 class DataSavingPageState extends State<DataSavingPage>{
-   bool toggleable=false;
+   bool _dataSaving=false;
+   bool _reduceVideo=false;
+   bool _reduceSmart=false;
+   bool _onlyDownload=false;
+   bool _uploadOver=false;
+   bool _mutePlayBack=false;
+   bool _selectQuality=false;
+   bool _mobileData=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,12 +30,9 @@ class DataSavingPageState extends State<DataSavingPage>{
         title: Text("Data-saving mode"),
         subtitle: Text("Automatically adjusts setting to save mobile data"),
         trailing: Switch(
-            value: toggleable,
-            onChanged:(newValue){
-              setState(() {
-                toggleable= newValue;
-              });
-            }
+          value: _dataSaving,
+          onChanged: (value)=>
+              setState(() => _dataSaving=value),
         ),
       ),
               ListTile(
@@ -38,60 +42,45 @@ class DataSavingPageState extends State<DataSavingPage>{
                 title: Text("Reduce video quality"),
                 subtitle: Text(""),
                 trailing: Switch(
-                    value: toggleable,
-                    onChanged:(newValue){
-                      setState(() {
-                        toggleable= newValue;
-                      });
-                    }
+                  value: _reduceVideo,
+                  onChanged: (value)=>
+                      setState(() => _reduceVideo=value),
                 ),
               ),
               ListTile(
                 title: Text("Reduce smart downloads quality"),
                 subtitle: Text(""),
                 trailing: Switch(
-                    value: toggleable,
-                    onChanged:(newValue){
-                      setState(() {
-                        toggleable= newValue;
-                      });
-                    }
+                  value: _reduceSmart,
+                  onChanged: (value)=>
+                      setState(() => _reduceSmart=value),
                 ),
               ),
               ListTile(
-                title: Text("Only sownload over Wi-Fi and unrestricted mobile data"),
+                title: Text("Only download over Wi-Fi and unrestricted mobile data"),
                 subtitle: Text(""),
                 trailing: Switch(
-                    value: toggleable,
-                    onChanged:(newValue){
-                      setState(() {
-                        toggleable= newValue;
-                      });
-                    }
+                  value: _onlyDownload,
+                  onChanged: (value)=>
+                      setState(() => _onlyDownload=value),
                 ),
               ),
               ListTile(
-                title: Text("Upload wver Wi-Fi only"),
+                title: Text("Upload over Wi-Fi only"),
                 subtitle: Text(""),
                 trailing: Switch(
-                    value: toggleable,
-                    onChanged:(newValue){
-                      setState(() {
-                        toggleable= newValue;
-                      });
-                    }
+                  value: _uploadOver,
+                  onChanged: (value)=>
+                      setState(() => _uploadOver=value),
                 ),
               ),
               ListTile(
                 title: Text("Muted playback in feeds over Wi-Fi only"),
                 subtitle: Text(""),
                 trailing: Switch(
-                    value: toggleable,
-                    onChanged:(newValue){
-                      setState(() {
-                        toggleable= newValue;
-                      });
-                    }
+                  value: _mutePlayBack,
+                  onChanged: (value)=>
+                      setState(() => _mutePlayBack=value),
                 ),
               ),
               Divider(
@@ -106,24 +95,18 @@ class DataSavingPageState extends State<DataSavingPage>{
                 title: Text("Select quality for every video"),
                 subtitle: Text(""),
                 trailing: Switch(
-                    value: toggleable,
-                    onChanged:(newValue){
-                      setState(() {
-                        toggleable= newValue;
-                      });
-                    }
+                  value: _selectQuality,
+                  onChanged: (value)=>
+                      setState(() => _selectQuality=value),
                 ),
               ),
               ListTile(
                 title: Text("Mobile data usage reminder"),
                 subtitle: Text(""),
                 trailing: Switch(
-                    value: toggleable,
-                    onChanged:(newValue){
-                      setState(() {
-                        toggleable= newValue;
-                      });
-                    }
+                  value: _mobileData,
+                  onChanged: (value)=>
+                      setState(() => _mobileData=value),
                 ),
               ),
 

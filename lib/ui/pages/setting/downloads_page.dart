@@ -9,7 +9,9 @@ class DownloadsPage extends StatefulWidget{
 
 }
 class DownloadsPageState extends State<DownloadsPage>{
-  bool isSwitched=false;
+  bool _downloadOver=false;
+  bool _recommend=false;
+  bool _downloadHelp=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,36 +32,27 @@ class DownloadsPageState extends State<DownloadsPage>{
               title: Text("Download over Wi-Fi only"),
               subtitle: Text(""),
               trailing: Switch(
-                  value: isSwitched,
-                  onChanged:(newValue){
-                    setState(() {
-                      isSwitched= newValue;
-                    });
-                  }
+                value: _downloadOver,
+                onChanged: (value)=>
+                    setState(() => _downloadOver=value),
               ),
             ),
             ListTile(
               title: Text("Recommend downloads"),
               subtitle: Text(""),
               trailing: Switch(
-                  value: isSwitched,
-                  onChanged:(newValue){
-                    setState(() {
-                      isSwitched= newValue;
-                    });
-                  }
+                value: _recommend,
+                onChanged: (value)=>
+                    setState(() => _recommend=value),
               ),
             ),
             ListTile(
               title: Text("Download help"),
               subtitle: Text("Find answers to your questions about downdoading videos"),
               trailing: Switch(
-                  value: isSwitched,
-                  onChanged:(newValue){
-                    setState(() {
-                      isSwitched= newValue;
-                    });
-                  }
+                value: _downloadHelp,
+                onChanged: (value)=>
+                    setState(() => _downloadHelp=value),
               ),
             ),
             ListTile(
