@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:youtube_clone/bloc/setting/setting_bloc.dart';
-import 'package:youtube_clone/ui/pages/home/my_home_page.dart';
+import 'package:youtube_clone/ui/pages/maintab/main_tab_screen.dart';
 
 import 'bloc/app_bloc_observer.dart';
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
           ),
-          home: Myhomepage(),
+          home: MainTabScreen(),
         )
     );
   }

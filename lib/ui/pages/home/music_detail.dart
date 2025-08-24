@@ -21,17 +21,19 @@ class MusicDetailState extends State<MusicDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                MusicInfoView(widget.data,(){
-                  Navigator.of(context).pop();
-                }),
-                ChannelSubscribeView(widget.data),
-                SocialActions(),
-                CommentSectionView(),
-              ]
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  MusicInfoView(widget.data,(){
+                    Navigator.of(context).pop();
+                  }),
+                  ChannelSubscribeView(widget.data),
+                  SocialActions(),
+                  CommentSectionView(),
+                ]
+            ),
           ),
         ),
     );

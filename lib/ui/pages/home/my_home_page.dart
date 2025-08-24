@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:youtube_clone/model/music_model.dart';
 import 'package:youtube_clone/ui/pages/home/widget/bottom_bar_page.dart';
 import 'package:youtube_clone/ui/pages/home/widget/home_social_actions_page.dart';
+import 'package:youtube_clone/ui/pages/home/widget/home_top_tab.dart';
 import 'package:youtube_clone/ui/pages/setting/setting_page.dart';
 import 'package:youtube_clone/ui/widgets/music_card.dart';
 
@@ -72,7 +73,9 @@ class MyhomepageState extends State<Myhomepage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          HomeSocialActionsPage(),
+          HomeTopTab((selectedTab){
+            print(selectedTab);
+          }),
           Expanded(
             child: ListView.builder(
               itemCount: musicDataList.length,
