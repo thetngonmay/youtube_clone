@@ -6,7 +6,7 @@ class CommentSectionView extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(left: 15, right: 15, top: 15),
-      height: 100,
+      height: 120,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
@@ -20,9 +20,30 @@ class CommentSectionView extends StatelessWidget{
                 color: Colors.grey[300],
                 borderRadius: BorderRadius.circular(10),
               ),
-              child:Row(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Comments", style: TextStyle(color: Colors.black, fontSize: 16))
+                  Row(
+                    children: [
+                      Text("comments",style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold),
+                      ),
+                    ],
+            ),
+            SizedBox(height: 10),
+            Row(
+            children: [
+              CircleAvatar(
+            child: Text("M"),
+            backgroundColor: Colors.blue,
+            ),
+            SizedBox(
+            width: 10),
+            Expanded(
+            child: Text("Like this song",style: TextStyle(fontSize: 15),
+            ),
+            ),
+            ],
+            ),
                 ],
               ),
             );

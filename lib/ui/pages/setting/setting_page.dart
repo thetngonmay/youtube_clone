@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:youtube_clone/model/setting_model.dart';
 import 'package:youtube_clone/ui/pages/setting/billing_and_payments.dart';
 import 'package:youtube_clone/ui/pages/setting/connected_apps_page.dart';
+import 'package:youtube_clone/ui/pages/setting/family_center_page.dart';
 import 'package:youtube_clone/ui/pages/setting/general_setting_page.dart';
 import 'package:youtube_clone/ui/pages/setting/notification_setting_page.dart';
 import 'package:youtube_clone/ui/pages/setting/playback_page.dart';
@@ -79,7 +80,7 @@ class SettingPageState extends State<SettingPage>{
         [
           SettingModel(
               Icons.videocam_outlined,
-             " Video quality preferences"
+             "Video quality preferences"
           ),
           SettingModel(
               Icons.play_arrow_outlined,
@@ -163,13 +164,19 @@ class SettingPageState extends State<SettingPage>{
                            MaterialPageRoute(builder: (context) =>
                                SwitchAccountSettingPage()));
                      }
+                     else if(item.text=="Family Centre"){
+                       Navigator.push(context,
+                           MaterialPageRoute(builder: (context)=>FamilyCenterPage()));
+                     }
                      else if (item.text == "Notifications") {
                        Navigator.push(
                            context,
                            MaterialPageRoute(builder: (context) =>
                                NotificationSettingPage()));
                      }
-                     else if (item.text == "Billing and payments") {
+                     else if (item.text=="Purchases and memberships"){
+
+                     } else if (item.text == "Billing and payments") {
                        Navigator.push(
                            context,
                            MaterialPageRoute(

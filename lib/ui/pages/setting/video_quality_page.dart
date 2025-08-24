@@ -8,7 +8,21 @@ class VideoQualityPage extends StatefulWidget{
   }
 }
 class VideoQualityPageState extends State<VideoQualityPage>{
-  bool isSwitched=false;
+  String selectedQualityMobile = "auto";
+  String selectedQualityWifi = "auto";
+
+  void onMobileOptionChange(String? value){
+    setState(() {
+      selectedQualityMobile = value!;
+    });
+  }
+
+  void onWifiOptionChange(String? value){
+    setState(() {
+      selectedQualityWifi = value!;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,41 +43,41 @@ class VideoQualityPageState extends State<VideoQualityPage>{
                 ListTile(
                   title: Text("VIDEO QUALITY ON MOBILE NETWORKS",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
                 ),
-                ListTile(
-                  title: Text("Auto()recommended"),
-                  subtitle: Text("Adjusts to give you the best experience for your conditions"),
-                  trailing: Switch(
-                      value: isSwitched,
-                      onChanged: (newValue) {
-                        setState(() {
-                          isSwitched = newValue;
-                        });
-                      }
-                  ),
-                ),
-                ListTile(
-                  title: Text("Higher picture quality"),
-                  subtitle: Text("Uses more data"),
-                  trailing: Switch(
-                      value: isSwitched,
-                      onChanged: (newValue) {
-                        setState(() {
-                          isSwitched = newValue;
-                        });
-                      }
-                  ),
-                ),
-                ListTile(
-                  title: Text("Data saver"),
-                  subtitle: Text("Lower picture quality"),
-                  trailing: Switch(
-                      value: isSwitched,
-                      onChanged: (newValue) {
-                        setState(() {
-                          isSwitched = newValue;
-                        });
-                      }
-                  ),
+                RadioGroup<String>(
+                  groupValue: selectedQualityMobile,
+                    onChanged: onMobileOptionChange,
+                    child: Column(
+                      children: [
+                        ListTile(
+                          title: Text("Auto()recommended"),
+                          subtitle: Text("Adjusts to give you the best experience for your conditions"),
+                          trailing: Radio<String>(
+                            value: "auto",
+                          ),
+                          onTap: (){
+                            onMobileOptionChange("auto");
+                          },
+                        ),
+                        ListTile(
+                          title: Text("Higher picture quality"),
+                          subtitle: Text("Uses more data"),
+                          trailing: Radio<String>(value: "high"),
+                          onTap: (){
+                            onMobileOptionChange("high");
+                          },
+                        ),
+                        ListTile(
+                          title: Text("Data saver"),
+                          subtitle: Text("Lower picture quality"),
+                          trailing: Radio<String>(
+                            value: "saver",
+                          ),
+                          onTap: (){
+                            onMobileOptionChange("saver");
+                          },
+                        ),
+                      ],
+                    )
                 ),
                 Divider(
                   color: Colors.blue,
@@ -73,41 +87,42 @@ class VideoQualityPageState extends State<VideoQualityPage>{
                 ListTile(
                   title: Text("VIDEO QUALITY ON WI-FI",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
                 ),
-                ListTile(
-                  title: Text("Auto()recommended"),
-                  subtitle: Text("Adjusts to give you the best experience for your conditions"),
-                  trailing: Switch(
-                      value: isSwitched,
-                      onChanged: (newValue) {
-                        setState(() {
-                          isSwitched = newValue;
-                        });
-                      }
-                  ),
+                RadioGroup<String>(
+                    groupValue: selectedQualityWifi,
+                      onChanged: onWifiOptionChange,
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Text("Auto()recommended"),
+                      subtitle: Text("Adjusts to give you the best experience for your conditions"),
+                      trailing: Radio<String>(
+                          value: "auto"
+                      ),
+                      onTap: (){
+                      onWifiOptionChange("auto");
+                      },
+                    ),
+                    ListTile(
+                      title: Text("Higher picture quality"),
+                      subtitle: Text("Uses more data"),
+                      trailing: Radio<String>(
+                        value: "higher",
+                      ),
+                      onTap: (){
+                        onWifiOptionChange("higher");
+                      },
+                    ),
+                    ListTile(
+                      title: Text("Data saver"),
+                      subtitle: Text("Lower picture quality"),
+                      trailing: Radio<String>(
+                          value: "lower"),
+                      onTap: (){
+                        onWifiOptionChange("lower");
+                      },
+                    )
+                  ],
                 ),
-                ListTile(
-                  title: Text("Higher picture quality"),
-                  subtitle: Text("Uses more data"),
-                  trailing: Switch(
-                      value: isSwitched,
-                      onChanged: (newValue) {
-                        setState(() {
-                          isSwitched = newValue;
-                        });
-                      }
-                  ),
-                ),
-                ListTile(
-                  title: Text("Data saver"),
-                  subtitle: Text("Lower picture quality"),
-                  trailing: Switch(
-                      value: isSwitched,
-                      onChanged: (newValue) {
-                        setState(() {
-                          isSwitched = newValue;
-                        });
-                      }
-                  ),
                 ),
               ]
           )
