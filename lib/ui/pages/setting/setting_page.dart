@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:youtube_clone/bloc/setting/setting_bloc.dart';
 import 'package:youtube_clone/model/setting_model.dart';
 import 'package:youtube_clone/ui/pages/setting/billing_and_payments.dart';
 import 'package:youtube_clone/ui/pages/setting/connected_apps_page.dart';
@@ -136,6 +138,16 @@ class SettingPageState extends State<SettingPage>{
    return Scaffold(
      appBar: AppBar(
        title: Text("Settings"),
+       actions: [
+         BlocBuilder<SettingBloc, SettingState>(
+           builder: (context, state){
+             if(state is VideoQualityState){
+               return Text(state.wifiQualityType);
+             }
+             return CircularProgressIndicator();
+           },
+         )
+       ],
      ),
      body: ListView.separated(
          itemCount: settingDataList.length,
