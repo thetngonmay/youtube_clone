@@ -66,7 +66,8 @@ class MyhomepageState extends State<Myhomepage> {
       appBar: AppBar(
         title: Text("Youtube"),
         actions: [
-          IconButton(onPressed: onNotiClick, icon: Icon(Icons.notifications)),
+          IconButton(onPressed: onCastClick, icon: Icon(Icons.cast),),
+          IconButton(onPressed: onNotiClick, icon: Icon(Icons.notifications_none)),
           IconButton(onPressed: onSettingClick, icon: Icon(Icons.settings)),
         ],
       ),
@@ -90,4 +91,7 @@ class MyhomepageState extends State<Myhomepage> {
   }
 
   void onMoreClick() {}
+
+  void onCastClick() {
+  }
 }

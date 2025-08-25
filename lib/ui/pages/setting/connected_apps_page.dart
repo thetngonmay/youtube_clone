@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/ui/pages/setting/setting_page.dart';
 
 class ConnectedAppsPage extends StatefulWidget{
   @override
@@ -17,7 +18,34 @@ class ConnectedAppsPageState extends State<ConnectedAppsPage>{
         actions: [
           IconButton(onPressed:onCastClick, icon: Icon(Icons.cast)),
           IconButton(onPressed: onSearchClick, icon: Icon(Icons.search)),
-          IconButton(onPressed: onMoreClick, icon: Icon(Icons.more_vert)),
+          PopupMenuButton<String>(
+            onSelected: (String result){
+              if(result=='setting'){
+                Navigator.push(
+                    context,
+                MaterialPageRoute(builder: (context)=>SettingPage()));
+              }
+
+            },
+              itemBuilder: (BuildContext context)=> <PopupMenuEntry<String>>[
+              const PopupMenuItem<String>(
+                value: 'setting',
+              child: Text("Setting"),
+              ),
+                const PopupMenuItem<String>(
+                  value: 'tv',
+                    child: Text("Watch on TV"),
+                ),
+                const PopupMenuItem<String>(
+                    value: 'term',
+                      child: Text("Terms and privacy policy"),
+                ),
+                const PopupMenuItem<String>(
+                  value: 'help',
+                    child: Text("Help and feedback"),
+    )
+          ]
+          )
         ],
       ),
       body: SingleChildScrollView(

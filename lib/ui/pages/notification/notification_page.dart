@@ -94,12 +94,12 @@ class NotificationPageState extends State<NotificationPage>{
 
           ],
         ),
-      body: ListView.builder(
-        itemCount: notiDataList.length,
-          itemBuilder: (BuildContext context,int index){
-          return NotificationCard(data: notiDataList[index]);
-          }
-      )
+        body: ListView.builder(
+            itemCount: notiDataList.length,
+            itemBuilder: (BuildContext context,int index){
+              return NotificationCard(data: notiDataList[index]);
+            }
+        )
     );
 
   }
