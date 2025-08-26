@@ -9,47 +9,56 @@ class NotificationCard extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: data.isSeen? Colors.white: Colors.blueAccent,
-      child: Container(
-        padding: EdgeInsets.only(left: 15,top: 15,bottom: 15),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CircleAvatar(
-              backgroundImage: CachedNetworkImageProvider(data.channelProfileUrl),
-            ),
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.only(left: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(data.notificationTitle, style: TextStyle(fontSize: 20),),
-                    Text(data.notificationDesc),
-                    Text(data.createdDate),
-                 ],
-                ),
-              ),
-            ),
-            ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(15)),
-              child: CachedNetworkImage(
-                width: 100,
-                height: 70,
-                fit: BoxFit.cover,
-                progressIndicatorBuilder: (context, url, progress) => Center(
-                  child: CircularProgressIndicator(
-                    value: progress.progress,
+    return Builder(
+      builder: (context) {
+        return Container(
+          child: Card(
+            color: data.isSeen? Colors.white: Colors.blueAccent,
+            child: Container(
+              padding: EdgeInsets.only(left: 15,top: 15,bottom: 15),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    backgroundImage: CachedNetworkImageProvider(data.channelProfileUrl),
                   ),
-                ),
-                imageUrl: data.videoImage,
-              ),
+
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(data.notificationTitle, style: TextStyle(fontSize: 20),),
+                          Text(data.notificationDesc),
+                          Text(data.createdDate),
+                       ],
+                      ),
+                    ),
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                    child: CachedNetworkImage(
+                      width: 100,
+                      height: 70,
+                      fit: BoxFit.cover,
+                      progressIndicatorBuilder: (context, url, progress) => Center(
+                        child: CircularProgressIndicator(
+                          value: progress.progress,
+                        ),
+                      ),
+                      imageUrl: data.videoImage,
+                    ),
+
+                  ),
+                  IconButton(onPressed: onMoreClick, icon: Icon(Icons.more_vert),),
+               ]
+             ),
+
             ),
-            IconButton(onPressed: onMoreClick, icon: Icon(Icons.more_vert),)
-         ]
-       ),
-      ),
+          ),
+        );
+      }
     );
   }
 

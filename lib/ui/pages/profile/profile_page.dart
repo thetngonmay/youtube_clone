@@ -248,37 +248,31 @@ class  ProfilePageState extends State<ProfilePage>{
                   },
                 )
               ),
+
               Padding(
                 padding: EdgeInsets.only(left:15 ,right: 15,top: 25,bottom: 15),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Playlist",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                    Text("History",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
                     SizedBox(height: 20),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[100],
+                        borderRadius: BorderRadius.circular(30),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 1,
+                            offset: Offset(1, 1),
+                          ),
+                        ],
+                      ),
                       child: Row(
                         children: [
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
-                            decoration: BoxDecoration(
-                              color: Colors.grey[100],
-                              borderRadius: BorderRadius.circular(30),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black12,
-                                  blurRadius: 1,
-                                  offset: Offset(1, 1),
-                                ),
-                              ],
-                            ),
-                            child: Row(
-                              children: [
-                                Text("View all",style: TextStyle(fontSize: 18),),
-                              ],
-                            ),
-                          ),
+                          Text("View all",style: TextStyle(fontSize: 18),),
                         ],
                       ),
                     ),
@@ -286,27 +280,64 @@ class  ProfilePageState extends State<ProfilePage>{
                 ),
               ),
               Container(
-                  height: 100,
+                  height: 120,
                   child: ListView.separated(
                     separatorBuilder: (context,index){
                       return SizedBox(width: 10,);
                     },
+                    padding: EdgeInsets.symmetric(horizontal: 8),
                     scrollDirection: Axis.horizontal,
-                    itemCount: 10,
+                    itemCount: 3,
                     itemBuilder: (context, index){
-                      return ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(15)),
-                        child: CachedNetworkImage(
-                          width: 150,
-                          height: 70,
-                          fit: BoxFit.cover,
-                          progressIndicatorBuilder: (context ,url ,progress)=>Center(
-                            child: CircularProgressIndicator(
-                              value: progress.progress,
+                      if (index==3-1){
+                        return Column(
+                          children: [
+                            Expanded(
+                                child: Center(child: CircleAvatar(
+                                  child: Icon(Icons.add),
+                                ))
+                            ),
+                            Text("New Playlist"),
+                            SizedBox(height: 20,)
+                          ],
+                        );
+                      }
+                      return Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.all(Radius.circular(15)),
+                              child: CachedNetworkImage(
+                                width: 150,
+                                height: 70,
+                                fit: BoxFit.cover,
+                                progressIndicatorBuilder: (context ,url ,progress)=>Center(
+                                  child: CircularProgressIndicator(
+                                    value: progress.progress,
+                                  ),
+                                ),
+                                imageUrl: "https://i.guim.co.uk/img/media/67944850a1b5ebd6a0fba9e3528d448ebe360c60/359_0_2469_1482/master/2469.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=03f3e07a7f367f36a738f1ad8132b3bb",
+                              ),
                             ),
                           ),
-                          imageUrl: "https://upload.wikimedia.org/wikipedia/commons/5/55/Justin_Bieber_in_Rosemont%2C_Illinois_%282015%29_%28cropped%29.jpg",
-                        ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("New Playlist"),
+                                  Text("Private")
+                                ],
+                              ),
+                              IconButton(onPressed: (){
+
+                              }, icon: Icon(Icons.more_vert_outlined))
+                            ],
+                          )
+                        ],
                       );
                     },
                   )
@@ -318,7 +349,7 @@ class  ProfilePageState extends State<ProfilePage>{
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
-                    crossAxisAlignment: CrossAxisAlignment.center, // align center vertically
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       IconButton(
                         onPressed: onVideoClick,
@@ -368,7 +399,7 @@ class  ProfilePageState extends State<ProfilePage>{
                         icon: Icon(Icons.video_settings_outlined),
                       ),
                       Text(
-                        "Your Videos",
+                        "Get YouTube Premium",
                         style: TextStyle(fontSize: 17),
                       ),
                     ],

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:youtube_clone/bloc/setting/setting_bloc.dart';
 import 'package:youtube_clone/model/setting_model.dart';
 import 'package:youtube_clone/ui/pages/setting/billing_and_payments.dart';
+import 'package:youtube_clone/ui/pages/setting/caption_preferences_page.dart';
 import 'package:youtube_clone/ui/pages/setting/connected_apps_page.dart';
 import 'package:youtube_clone/ui/pages/setting/family_center_page.dart';
 import 'package:youtube_clone/ui/pages/setting/general_setting_page.dart';
@@ -233,6 +234,10 @@ class SettingPageState extends State<SettingPage>{
                      else if(item.text=="Help"){
                        Navigator.push(context,
                            MaterialPageRoute(builder: (context)=>HelpPage()));
+                     }
+                     else if(item.text=='Captions'){
+                       Navigator.push(context,
+                           MaterialPageRoute(builder: (context)=>CaptionPreferencesPage()));
                      }
 
                    },

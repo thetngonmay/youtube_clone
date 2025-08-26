@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/model/music_model.dart';
+import 'package:youtube_clone/ui/pages/subscriptions/music_list_page.dart';
+import 'package:youtube_clone/ui/pages/subscriptions/subscription_stories_page.dart';
 import 'package:youtube_clone/ui/pages/subscriptions/subscription_tap_page.dart';
+import 'package:youtube_clone/ui/widgets/music_card.dart';
+
+import '../notification/notification_page.dart' show NotificationPage;
+import '../search/search_page.dart' show SearchPage;
 
 class SubscribtionsPage extends StatefulWidget{
   @override
@@ -9,6 +16,7 @@ class SubscribtionsPage extends StatefulWidget{
 
 }
 class SubscribtionsPageState extends State<SubscribtionsPage>{
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,27 +25,38 @@ class SubscribtionsPageState extends State<SubscribtionsPage>{
         actions: [
           IconButton(onPressed: onCastClick, icon: Icon(Icons.cast),),
           IconButton(onPressed: onNotificatiionClick, icon: Icon(Icons.notifications_none),),
-          IconButton(onPressed: onSettingClick, icon: Icon(Icons.settings_outlined),),
+          IconButton(onPressed: onSearchClick, icon: Icon(Icons.search),),
         ],
       ),
         body: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SubscriptionTapPage((selectedTab){
-
-              })
-            ],
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 110,
+              child: SubscriptionStoriesPage(),
+            ),
+            Expanded(
+              child: SubscriptionTapPage((selectedTab){
+                print(selectedTab);
+              }),
+            ),
+            Expanded(child: MusicListPage(),
+            )
+          ],
         ),
-    );
+        );
   }
 
 
   void onCastClick() {
   }
   void onNotificatiionClick(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationPage()));
 
   }
 
-  void onSettingClick() {
+  void onSearchClick() {
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> SearchPage()));
   }
 }
