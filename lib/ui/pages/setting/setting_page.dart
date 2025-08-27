@@ -5,6 +5,7 @@ import 'package:youtube_clone/model/setting_model.dart';
 import 'package:youtube_clone/ui/pages/setting/billing_and_payments.dart';
 import 'package:youtube_clone/ui/pages/setting/caption_preferences_page.dart';
 import 'package:youtube_clone/ui/pages/setting/connected_apps_page.dart';
+import 'package:youtube_clone/ui/pages/setting/experimental_page.dart';
 import 'package:youtube_clone/ui/pages/setting/family_center_page.dart';
 import 'package:youtube_clone/ui/pages/setting/general_setting_page.dart';
 import 'package:youtube_clone/ui/pages/setting/notification_setting_page.dart';
@@ -246,6 +247,10 @@ class SettingPageState extends State<SettingPage>{
                      else if (item.text=="Purchases and memberships"){
                        Navigator.push(context, MaterialPageRoute(
                            builder: (context)=>PurchasesPage()));
+                     }
+                     else if (item.text=="Try experimental new features"){
+                       Navigator.push(context, MaterialPageRoute(
+                           builder: (context)=>ExperimentalPage()));
                      }
 
                    },
