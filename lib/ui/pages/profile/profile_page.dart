@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/ui/pages/notification/notification_page.dart';
@@ -255,26 +257,29 @@ class  ProfilePageState extends State<ProfilePage>{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("History",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                    Text("Playlists",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
                     SizedBox(height: 20),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.grey[100],
-                        borderRadius: BorderRadius.circular(30),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black12,
-                            blurRadius: 1,
-                            offset: Offset(1, 1),
-                          ),
-                        ],
-                      ),
-                      child: Row(
-                        children: [
-                          Text("View all",style: TextStyle(fontSize: 18),),
-                        ],
-                      ),
+                    Row(
+                      children: [
+                        IconButton(onPressed: (){
+                          onPlusClick(context);
+                        }, icon: Icon(Icons.add)),
+                        Container(
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            decoration: BoxDecoration(
+                              color: Colors.grey[100],
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black12,
+                                  blurRadius: 1,
+                                  offset: Offset(1, 1),
+                                ),
+                              ],
+                            ),
+                            child: Text("View all",style: TextStyle(fontSize: 18),)
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -460,6 +465,38 @@ class  ProfilePageState extends State<ProfilePage>{
   void onMovieClick() {}
   void onYouTubeClick() {}
   void onTimeWatchClick() {}
-  void onHelpClick() {
+  void onHelpClick() {}
+  void onPlusClick(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context){
+          return AlertDialog(
+            title: Text("Create Playlist"),
+            content: Container(
+              height: 50,
+              width: double.infinity,
+              child: Column(
+                children: [
+
+                ],
+              ),
+            ),
+            actions: [
+              OutlinedButton(
+                  onPressed: (){
+                    Navigator.of(context).pop();
+                  },
+                  child: Text("Cancel"),
+              ),
+              FilledButton(
+                  onPressed: (){
+                  },
+                  child: Text("Create"),
+              ),
+
+            ],
+          );
+        }
+    );
   }
 }
