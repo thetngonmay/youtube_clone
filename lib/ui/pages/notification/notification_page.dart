@@ -2,7 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/model/notification_model.dart';
 import 'package:youtube_clone/ui/pages/search/search_page.dart';
+import 'package:youtube_clone/ui/pages/setting/help_page.dart';
+import 'package:youtube_clone/ui/pages/setting/privacy_page.dart';
 import 'package:youtube_clone/ui/pages/setting/setting_page.dart';
+import 'package:youtube_clone/ui/pages/setting/watch_on_page.dart';
 import 'package:youtube_clone/ui/widgets/notification_card.dart';
 
 class NotificationPage extends StatefulWidget {
@@ -71,7 +74,23 @@ class NotificationPageState extends State<NotificationPage>{
                       MaterialPageRoute(builder: (context)=>SettingPage())
                   );
                 }
+                else if(result=='tv'){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context)=>WatchOnPage()));
+                }
+                else if(result=='tc'){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context)=>PrivacyPage()));
+                }
+                else if(result=='help'){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context)=>HelpPage()));
+                }
               },
+
               itemBuilder: (BuildContext context)=> <PopupMenuEntry<String>>[
                 const PopupMenuItem<String>(
                   value: 'setting',

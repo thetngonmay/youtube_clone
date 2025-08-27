@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MusicListPage extends StatefulWidget{
+class MusicListView extends StatefulWidget{
   final List<Map<String, String>> musicList=[
     {
       'imageUrl':'https://i.guim.co.uk/img/media/67944850a1b5ebd6a0fba9e3528d448ebe360c60/359_0_2469_1482/master/2469.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=03f3e07a7f367f36a738f1ad8132b3bb',
@@ -31,23 +31,22 @@ class MusicListPage extends StatefulWidget{
   }
 
 }
-class MusicPageState extends State<MusicListPage> {
+class MusicPageState extends State<MusicListView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView.builder(
-        padding: EdgeInsets.only(left: 15,right: 15),
-        itemCount: widget.musicList.length,
-        itemBuilder: (context, index) {
-          return _buildMusicItem(widget.musicList[index]);
-        },
-      ),
+    return ListView.builder(
+      shrinkWrap: true,
+      padding: EdgeInsets.only(left: 15,right: 15),
+      itemCount: widget.musicList.length,
+      itemBuilder: (context, index) {
+        return _buildMusicItem(widget.musicList[index]);
+      },
     );
   }
 
   Widget _buildMusicItem(Map<String, String> music) {
     return Container(
-      margin: EdgeInsets.only(bottom: 16),
+      margin: EdgeInsets.only(top: 16),
       child: Row(
         children: [
           Container(

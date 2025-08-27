@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/model/music_model.dart';
-import 'package:youtube_clone/ui/pages/subscriptions/music_list_page.dart';
-import 'package:youtube_clone/ui/pages/subscriptions/subscription_stories_page.dart';
-import 'package:youtube_clone/ui/pages/subscriptions/subscription_tap_page.dart';
+import 'package:youtube_clone/ui/pages/subscriptions/music_list_view.dart';
+import 'package:youtube_clone/ui/pages/subscriptions/subscription_stories_view.dart';
+import 'package:youtube_clone/ui/pages/subscriptions/subscription_tab_view.dart';
 import 'package:youtube_clone/ui/widgets/music_card.dart';
 
 import '../notification/notification_page.dart' show NotificationPage;
@@ -16,7 +16,7 @@ class SubscribtionsPage extends StatefulWidget{
 
 }
 class SubscribtionsPageState extends State<SubscribtionsPage>{
-
+ScrollController scrollController=ScrollController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,22 +28,19 @@ class SubscribtionsPageState extends State<SubscribtionsPage>{
           IconButton(onPressed: onSearchClick, icon: Icon(Icons.search),),
         ],
       ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 110,
-              child: SubscriptionStoriesPage(),
-            ),
-            Expanded(
-              child: SubscriptionTapPage((selectedTab){
+        body: SingleChildScrollView(
+          controller: ScrollController(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SubscriptionStoriesView(),
+              SubscriptionTabView((selectedTab){
                 print(selectedTab);
               }),
-            ),
-            Expanded(child: MusicListPage(),
-            )
-          ],
+
+            ],
+          ),
         ),
         );
   }
