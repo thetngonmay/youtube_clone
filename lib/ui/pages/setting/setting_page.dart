@@ -10,7 +10,9 @@ import 'package:youtube_clone/ui/pages/setting/general_setting_page.dart';
 import 'package:youtube_clone/ui/pages/setting/notification_setting_page.dart';
 import 'package:youtube_clone/ui/pages/setting/playback_page.dart';
 import 'package:youtube_clone/ui/pages/setting/privacy_page.dart';
+import 'package:youtube_clone/ui/pages/setting/purchases_page.dart';
 import 'package:youtube_clone/ui/pages/setting/switch_account_setting_page.dart';
+import 'package:youtube_clone/ui/pages/setting/watch_on_page.dart';
 
 import 'about_page.dart' show AboutPage;
 import 'accessbility_page.dart';
@@ -187,9 +189,7 @@ class SettingPageState extends State<SettingPage>{
                            MaterialPageRoute(builder: (context) =>
                                NotificationSettingPage()));
                      }
-                     else if (item.text=="Purchases and memberships"){
-
-                     } else if (item.text == "Billing and payments") {
+                     else if (item.text == "Billing and payments") {
                        Navigator.push(
                            context,
                            MaterialPageRoute(
@@ -238,6 +238,14 @@ class SettingPageState extends State<SettingPage>{
                      else if(item.text=='Captions'){
                        Navigator.push(context,
                            MaterialPageRoute(builder: (context)=>CaptionPreferencesPage()));
+                     }
+                     else if(item.text=="Watch on TV"){
+                       Navigator.push(context, MaterialPageRoute(
+                           builder: (context)=>WatchOnPage()));
+                     }
+                     else if (item.text=="Purchases and memberships"){
+                       Navigator.push(context, MaterialPageRoute(
+                           builder: (context)=>PurchasesPage()));
                      }
 
                    },
