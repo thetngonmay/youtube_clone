@@ -7,6 +7,7 @@ class MusicCard extends StatelessWidget{
   final MusicModel data;
 
   const MusicCard({super.key, required this.data});
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -94,7 +95,12 @@ class MusicCard extends StatelessWidget{
                           ),
                         ),
                       ),
-                      IconButton(onPressed: onMoreClick, icon: Icon(Icons.more_vert))
+                      IconButton(
+                        onPressed: (){
+                          onMoreClick(context);
+                        },
+                        icon: Icon(Icons.more_vert_outlined),
+                      ),
                     ],
                   ),
                 ),
@@ -104,9 +110,48 @@ class MusicCard extends StatelessWidget{
       ),
     );
   }
-
-
-  void onMoreClick() {
+  void onMoreClick(BuildContext contex) {
+    showModalBottomSheet(
+        context: contex,
+        builder: (BuildContext context){
+          return Container(
+            width: double.infinity,
+            height: 250,
+            child: Column(
+              children: [
+                ListTile(
+                  onTap: (){},
+                  leading: Icon(Icons.hide_source_outlined),
+                  title: Text("Not interested"),
+                ),
+                ListTile(
+                  onTap: (){},
+                  leading: Icon(Icons.playlist_add_outlined),
+                  title: Text("Play next in queue"),
+                  trailing: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.network("https://img.freepik.com/free-vector/gradient-p-logo-template_23-2149372725.jpg?semt=ais_hybrid&w=740&q=80",
+                      width: 30,
+                      height: 30,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                ListTile(
+                  onTap: (){},
+                  leading: Icon(Icons.save),
+                  title: Text("Save to Library"),
+                ),
+                ListTile(
+                  onTap: (){},
+                  leading: Icon(Icons.shortcut_outlined),
+                  title: Text("Share"),
+                ),
+              ],
+            ),
+          );
+        }
+    );
 
   }
 }

@@ -93,5 +93,35 @@ class MyhomepageState extends State<Myhomepage> {
   void onMoreClick() {}
 
   void onCastClick() {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context){
+          return Container(
+            width: double.infinity,
+            height: 200,
+            child: Column(
+              children: [
+                ListTile(
+                  title: Text("Select a device"),
+                ),
+                ListTile(
+                  leading: IconButton(onPressed: onLinkClick, icon: Icon(Icons.phonelink)),
+                  title: Text("Link with TV code"),
+                ),
+                ListTile(
+                  leading: IconButton(onPressed: onLearnClick, icon: Icon(Icons.info_outline)),
+                  title: Text("Learn more"),
+                )
+              ],
+            ),
+          );
+        }
+        );
+  }
+
+  void onLearnClick() {
+  }
+
+  void onLinkClick() {
   }
 }

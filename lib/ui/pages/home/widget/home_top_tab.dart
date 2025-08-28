@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class HomeTopTab extends StatefulWidget{
   final Function selectedTab;
-
   const HomeTopTab(this.selectedTab, {super.key});
 
   @override

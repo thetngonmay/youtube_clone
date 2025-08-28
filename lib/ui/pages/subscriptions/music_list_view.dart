@@ -5,7 +5,7 @@ class MusicListView extends StatefulWidget {
   final List<Map<String, String>> musicList = [
     {
       'imageUrl':
-          'https://i.guim.co.uk/img/media/67944850a1b5ebd6a0fba9e3528d448ebe360c60/359_0_2469_1482/master/2469.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=03f3e07a7f367f36a738f1ad8132b3bb',
+      'https://i.guim.co.uk/img/media/67944850a1b5ebd6a0fba9e3528d448ebe360c60/359_0_2469_1482/master/2469.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=03f3e07a7f367f36a738f1ad8132b3bb',
       'title': 'Billie Eilish-Birds of a Feather',
       'artist': 'Billie Eilish',
       'views': '234k views',
@@ -54,7 +54,7 @@ class MusicPageState extends State<MusicListView> {
       child: Row(
         children: [
           Container(
-            width: 120,
+            width: 150,
             height: 90,
             decoration: BoxDecoration(
               color: Colors.grey[300],
@@ -128,14 +128,57 @@ class MusicPageState extends State<MusicListView> {
         builder: (BuildContext context){
           return Container(
             width: double.infinity,
-            height: 100,
+            height: 400,
             child: Column(
               children: [
-                Text("data")
+               ListTile(
+                 onTap: (){},
+              leading: Icon(Icons.playlist_add_outlined),
+               title: Text("Play next in queue"),
+                 trailing: ClipRRect(
+                   borderRadius: BorderRadius.circular(8),
+                   child: Image.network("https://img.freepik.com/free-vector/gradient-p-logo-template_23-2149372725.jpg?semt=ais_hybrid&w=740&q=80",
+                     width: 30,
+                     height: 30,
+                     fit: BoxFit.cover,
+                   ),
+                 ),
+               ),
+                ListTile(
+                  onTap: (){},
+                  leading: Icon(Icons.watch_later_outlined),
+                  title: Text("Save to Watch Later"),
+                ),
+                ListTile(
+                  onTap: (){},
+                  leading: Icon(Icons.save),
+                  title: Text("Save to playlist"),
+                ),
+                ListTile(
+                  onTap: (){},
+                  leading: Icon(Icons.download),
+                  title: Text("Download video"),
+                ),
+                ListTile(
+                  onTap: (){},
+                  leading: Icon(Icons.shortcut_outlined),
+                  title: Text("Share"),
+                ),
+                ListTile(
+                  onTap: (){},
+                  leading: Icon(Icons.unsubscribe_outlined),
+                  title: Text("Unsubscribe"),
+                ),
+                ListTile(
+                  onTap: (){},
+                  leading: Icon(Icons.hide_source_outlined),
+                  title: Text("Hide"),
+                ),
               ],
             ),
           );
         }
     );
   }
+
 }

@@ -1,15 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/model/stories_model.dart';
 
 class SubscriptionStoriesView extends StatelessWidget {
-  final List<String> users = List.generate(6, (index) => "User $index");
-
+  List<StoriesModel> storiesDataList=[
+    StoriesModel(
+        'https://publish.purewow.net/wp-content/uploads/sites/2/2024/10/taylor-swift-hub.jpg?resize=720%2C780',
+        'Taylor Swift'
+    ),
+    StoriesModel(
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sDdZ6oItg8kPZsiSHS7NEuVTRCqrRkm6RA&s',
+        'Billie Eilish'
+    ),
+    StoriesModel(
+        'https://hips.hearstapps.com/hmg-prod/images/billie-1602750937.jpg?crop=0.6669921875xw:1xh;center,top&resize=640:*',
+        'Billie Eilish'
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 110,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: users.length,
+        itemCount: storiesDataList.length,
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.all(8),
@@ -17,12 +30,10 @@ class SubscriptionStoriesView extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 30,
-                  backgroundImage: NetworkImage(
-                    "https://i.guim.co.uk/img/media/67944850a1b5ebd6a0fba9e3528d448ebe360c60/359_0_2469_1482/master/2469.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=03f3e07a7f367f36a738f1ad8132b3bb",
-                  ),
+                  backgroundImage: NetworkImage(storiesDataList[index].channelProfileUrl),
                 ),
                 SizedBox(height: 5),
-                Text("Song Title"),
+                Text(storiesDataList[index].channelName),
               ],
             ),
           );

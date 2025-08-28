@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_clone/model/music_model.dart';
-import 'package:youtube_clone/ui/pages/subscriptions/music_list_view.dart';
 import 'package:youtube_clone/ui/pages/subscriptions/subscription_stories_view.dart';
 import 'package:youtube_clone/ui/pages/subscriptions/subscription_tab_view.dart';
-import 'package:youtube_clone/ui/widgets/music_card.dart';
 
 import '../notification/notification_page.dart' show NotificationPage;
 import '../search/search_page.dart' show SearchPage;
@@ -14,10 +11,8 @@ class SubscribtionsPage extends StatefulWidget {
     return SubscribtionsPageState();
   }
 }
-
 class SubscribtionsPageState extends State<SubscribtionsPage> {
   ScrollController scrollController = ScrollController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,20 +42,48 @@ class SubscribtionsPageState extends State<SubscribtionsPage> {
       ),
     );
   }
-
-  void onCastClick() {}
-
+  void onCastClick() {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context){
+          return Container(
+            width: double.infinity,
+            height: 200,
+            child: Column(
+              children: [
+                ListTile(
+                  title: Text("Select a device"),
+                ),
+                ListTile(
+                  leading: IconButton(onPressed: onLinkClick, icon: Icon(Icons.phonelink)),
+                  title: Text("Link with TV code"),
+                ),
+          ListTile(
+          leading: IconButton(onPressed: onLearnClick, icon: Icon(Icons.info_outline)),
+          title: Text("Learn more"),
+          ),
+              ],
+            ),
+          );
+        }
+    );
+  }
   void onNotificatiionClick() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => NotificationPage()),
     );
   }
-
   void onSearchClick() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => SearchPage()),
     );
+  }
+
+  void onLinkClick() {
+  }
+
+  void onLearnClick() {
   }
 }

@@ -46,7 +46,30 @@ class NotificationPageState extends State<NotificationPage>{
   ];
 
   void onCastClick(){
-
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext contex){
+          return Container(
+            width: double.infinity,
+            height: 200,
+            child: Column(
+              children: [
+                ListTile(
+                  title: Text("Selected a device"),
+                ),
+                ListTile(
+                  leading: IconButton(onPressed: onLinkClick, icon: Icon(Icons.phonelink)),
+                  title: Text("Link with TV code"),
+                ),
+                ListTile(
+                  leading: IconButton(onPressed: onLearnClick, icon: Icon(Icons.info_outline)),
+                  title: Text("Learn More"),
+                ),
+              ],
+            ),
+          );
+        }
+    );
   }
   void onSearchbar(){
     Navigator.push(
@@ -123,5 +146,11 @@ class NotificationPageState extends State<NotificationPage>{
 
   }
 
+
+  void onLinkClick() {
+  }
+
+  void onLearnClick() {
+  }
 }
 

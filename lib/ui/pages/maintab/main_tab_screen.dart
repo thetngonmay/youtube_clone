@@ -12,10 +12,8 @@ class MainTabScreen extends StatefulWidget{
 }
 
 class MainTabScreenState extends State<MainTabScreen>{
-
   var _tabSelectedIndex = 0;
   PageController? controller;
-
   @override
   void initState() {
     controller = PageController(initialPage: 0);

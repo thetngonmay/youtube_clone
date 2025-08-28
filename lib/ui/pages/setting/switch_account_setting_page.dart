@@ -12,10 +12,13 @@ class SwitchAccountSettingPageState extends State<SwitchAccountSettingPage>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Switch account"),
-        
+        title: Text("switch account"),
       ),
+
+
+
     );
+
   }
 
 }
