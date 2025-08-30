@@ -7,6 +7,7 @@ class NotificationCard extends StatelessWidget{
 
   const NotificationCard({super.key, required this.data});
 
+
   @override
   Widget build(BuildContext context) {
     return Builder(
@@ -51,7 +52,7 @@ class NotificationCard extends StatelessWidget{
                     ),
 
                   ),
-                  IconButton(onPressed: onMoreClick, icon: Icon(Icons.more_vert),),
+                  IconButton(icon: Icon(Icons.more_vert), onPressed:()=> onMoreClick(context),),
                ]
              ),
 
@@ -62,6 +63,35 @@ class NotificationCard extends StatelessWidget{
     );
   }
 
-  void onMoreClick() {
+  void onMoreClick(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context){
+          return Container(
+            width: double.infinity,
+            height:250 ,
+            child: Column(
+              children: [
+                ListTile(
+                  leading: Icon(Icons.watch_later_outlined),
+                  title: Text("Save to Watch Later"),
+                ),
+                ListTile(
+                  leading: Icon(Icons.hide_source_outlined),
+                  title: Text("Hide this notification"),
+                ),
+                ListTile(
+                  leading: Icon(Icons.notifications_off_outlined),
+                  title: Text("Turn off all from Aaprender Ingles Em Casa Offical"),
+                ),
+                ListTile(
+                  leading: Icon(Icons.notifications_off_outlined),
+                  title: Text("Turn off all recommendation notifications"),
+                )
+              ],
+            ),
+          );
+        }
+    );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/model/music_model.dart';
-import 'package:youtube_clone/ui/pages/home/widget/bottom_bar_page.dart';
-import 'package:youtube_clone/ui/pages/home/widget/home_social_actions_page.dart';
+import 'package:youtube_clone/ui/pages/home/drawer/music_page.dart';
 import 'package:youtube_clone/ui/pages/home/widget/home_top_tab.dart';
+import 'package:youtube_clone/ui/pages/profile/profile_page.dart';
 import 'package:youtube_clone/ui/pages/setting/setting_page.dart';
 import 'package:youtube_clone/ui/widgets/music_card.dart';
 
@@ -70,6 +70,142 @@ class MyhomepageState extends State<Myhomepage> {
           IconButton(onPressed: onNotiClick, icon: Icon(Icons.notifications_none)),
           IconButton(onPressed: onSettingClick, icon: Icon(Icons.settings)),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding:EdgeInsets.zero,
+          children: [
+            Container(
+              height:70,
+              padding:EdgeInsets.all(10),
+              child:Row(
+                children:[
+                  Image.network("https://icons.iconarchive.com/icons/papirus-team/papirus-apps/512/youtube-icon.png",
+                  width:40,
+                  height:40,
+                  ),
+                  SizedBox(width:10),
+                  Text("YouTube",style:TextStyle(fontSize:20, fontWeight:FontWeight.bold,))
+                ]
+              )
+            ),
+            ListTile(
+              leading: Icon(Icons.music_note),
+              title: Text("Music"),
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=>SettingPage()),);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.connect_without_contact_outlined),
+              title: Text("Live"),
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=>SettingPage()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.gamepad_outlined),
+              title: Text("Gaming"),
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=>SettingPage()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.newspaper_outlined),
+              title: Text("News"),
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=>SettingPage()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.sports_bar_outlined),
+              title: Text("Sports"),
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=>SettingPage()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.lightbulb_outline),
+              title: Text("Learning"),
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=>SettingPage()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.face_retouching_natural),
+              title: Text("Fashion & beauty"),
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=>SettingPage()));
+              },
+            ),
+            Divider(
+              thickness: 1,
+            ),
+            Container(
+              height:70,
+              padding:EdgeInsets.all(10),
+              child: Row(
+                children: [
+                  Image.network("https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png",
+                  width: 30,
+                    height: 30,
+                  ),
+                  SizedBox(width: 10,),
+                  Text("YouTube Premium")
+                ],
+              ),
+            ),
+        Container(
+          height:70,
+          padding:EdgeInsets.all(10),
+          child: Row(
+            children: [
+              Image.network("https://static.vecteezy.com/system/resources/thumbnails/042/127/122/small_2x/red-circle-bordered-youtube-logo-with-long-shadow-on-transparent-background-free-png.png",
+                width: 30,
+                height: 30,
+              ),
+              SizedBox(width: 10,),
+              Text("YouTube Music")
+            ],
+          ),
+        ),
+            Container(
+              height:70,
+              padding:EdgeInsets.all(10),
+              child: Row(
+                children: [
+                  Image.network("https://t4.ftcdn.net/jpg/05/43/40/85/360_F_543408558_cOK6l6q6V1XrKRP0VtgIIwKD1JeWw3aT.jpg",
+                    width: 30,
+                    height: 50,
+                  ),
+                  SizedBox(width: 10,),
+                  Text("YouTube Kids")
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

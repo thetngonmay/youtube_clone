@@ -41,6 +41,7 @@ class ProfileTopTabState extends State<ProfileTopTab>
           borderRadius: BorderRadius.circular(3),
           color: Colors.black,
         ),
+       dividerHeight: 0,
         tabs: [
           ...tabList.map((tabData) => Container(
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 7),

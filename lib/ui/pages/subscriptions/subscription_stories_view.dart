@@ -12,8 +12,20 @@ class SubscriptionStoriesView extends StatelessWidget {
         'Billie Eilish'
     ),
     StoriesModel(
-        'https://hips.hearstapps.com/hmg-prod/images/billie-1602750937.jpg?crop=0.6669921875xw:1xh;center,top&resize=640:*',
-        'Billie Eilish'
+        'https://www.famousbirthdays.com/faces/prinz-image.jpg',
+        'Prinz'
+    ),
+    StoriesModel(
+        'https://images.squarespace-cdn.com/content/v1/520ed800e4b0229123208764/1656293045194-N7H4CI672IUEJBT98Z9I/nelly_hero.jpeg',
+        'Nelly'
+    ),
+    StoriesModel(
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2pmp3GZsgGoqcxeVLLmRDy0sHpQU_w9cV7w&s',
+        'BolBBalgan4'
+    ),
+    StoriesModel(
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUpKnUnGuFb0kmg9jtm154pifmu0jg18VomA&s',
+        'BLACKPINK '
     ),
   ];
   @override

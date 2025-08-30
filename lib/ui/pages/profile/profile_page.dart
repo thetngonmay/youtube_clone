@@ -1,10 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/ui/pages/notification/notification_page.dart';
+import 'package:youtube_clone/ui/pages/profile/download_page.dart';
+import 'package:youtube_clone/ui/pages/profile/icognito/icognito_tab_screen.dart';
 import 'package:youtube_clone/ui/pages/profile/videos_page.dart';
 import 'package:youtube_clone/ui/pages/search/search_page.dart';
 import 'package:youtube_clone/ui/pages/setting/help_page.dart';
 import 'package:youtube_clone/ui/pages/setting/setting_page.dart';
+
+import 'movies_page.dart' show MoviesPage;
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -405,7 +409,7 @@ class ProfilePageState extends State<ProfilePage> {
                       onPressed: (){
                         onVideoClick(context);
                      },
-                      icon: IconButton(onPressed: onVideosClick, icon: Icon(Icons.video_collection_outlined)),
+                      icon: IconButton(onPressed: onVideosClick, icon: Icon(Icons.video_library_outlined)),
                     ),
                     Text("Your Videos", style: TextStyle(fontSize: 17)),
                   ],
@@ -418,6 +422,8 @@ class ProfilePageState extends State<ProfilePage> {
                       icon: Icon(Icons.arrow_downward_outlined),
                     ),
                     Text("Downloads", style: TextStyle(fontSize: 17)),
+                    SizedBox(width: 220,),
+                    IconButton(onPressed: onCheckClick, icon: Icon(Icons.check_circle))
                   ],
                 ),
                 Divider(color: Colors.grey, thickness: 2),
@@ -521,7 +527,10 @@ class ProfilePageState extends State<ProfilePage> {
 
   void onGoogleClick() {}
 
-  void onIcognitoClick() {}
+  void onIcognitoClick() {
+    Navigator.push(context, 
+        MaterialPageRoute(builder: (context)=>IcognitoTabScreen()));
+  }
 
   void onVideoClick(BuildContext context) {
     showDialog(
@@ -575,11 +584,18 @@ class ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  void onDownloadsClick() {}
+  void onDownloadsClick() {
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context)=>DownloadPage()));
+  }
 
   void onRadioClick() {}
 
-  void onMovieClick() {}
+  void onMovieClick() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context)=>MoviesPage()));
+  }
 
   void onYouTubeClick() {}
 
@@ -712,6 +728,11 @@ class ProfilePageState extends State<ProfilePage> {
     Navigator.push(context,
         MaterialPageRoute(builder: (context)=>VideosPage()),
     );
+  }
+
+  void onCheckClick() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context)=>DownloadPage()));
   }
 }
 

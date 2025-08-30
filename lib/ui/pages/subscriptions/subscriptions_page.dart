@@ -17,6 +17,17 @@ class SubscribtionsPageState extends State<SubscribtionsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 15),
+                child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoiMtJG_PC4lsb3-GZAiTZkUXAm3VlkJC1Ag&s",
+                  width: 40,
+                  height: 40,
+                ),
+              ),
+            ]
+        ),
         title: Text("YouTube"),
         actions: [
           IconButton(onPressed: onCastClick, icon: Icon(Icons.cast)),

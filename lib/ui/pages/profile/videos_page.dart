@@ -2,7 +2,13 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/ui/pages/profile/profile_top_tab.dart';
+import 'package:youtube_clone/ui/pages/search/search_page.dart';
 import 'package:youtube_clone/ui/pages/subscriptions/subscription_tab_view.dart';
+
+import '../setting/help_page.dart' show HelpPage;
+import '../setting/privacy_page.dart' show PrivacyPage;
+import '../setting/setting_page.dart' show SettingPage;
+import '../setting/watch_on_page.dart' show WatchOnPage;
 
 class VideosPage extends StatefulWidget{
   @override
@@ -19,7 +25,50 @@ class VideosPageState extends State<VideosPage>{
         actions: [
           IconButton(onPressed: onCastClick, icon: Icon(Icons.cast)),
           IconButton(onPressed: onSearchClick, icon: Icon(Icons.search)),
-          IconButton(onPressed: onMoreClick, icon: Icon(Icons.more_vert_outlined))
+          PopupMenuButton<String>(
+            onSelected: (String result){
+              if(result=='setting'){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=>SettingPage())
+                );
+              }
+              else if(result=='tv'){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=>WatchOnPage()));
+              }
+              else if(result=='tc'){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=>PrivacyPage()));
+              }
+              else if(result=='help'){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=>HelpPage()));
+              }
+            },
+
+            itemBuilder: (BuildContext context)=> <PopupMenuEntry<String>>[
+              const PopupMenuItem<String>(
+                value: 'setting',
+                child: Text('Setting'),
+              ),
+              const PopupMenuItem<String>(
+                value: 'tv',
+                child: Text('Watch on TV'),
+              ),
+              const PopupMenuItem<String>(
+                value: 'tc',
+                child: Text('Terms and privacy policy'),
+              ),
+              const PopupMenuItem<String>(
+                value: 'help',
+                child: Text('Help and feedback'),
+              )
+            ],
+          )
         ],
       ),
       body: Column(
@@ -81,11 +130,40 @@ class VideosPageState extends State<VideosPage>{
     );
   }
   void onCastClick() {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context){
+          return Container(
+            width: double.infinity,
+            height: 200,
+            child: Column(
+              children: [
+                    ListTile(
+                      title: Text("Select a device"),
+                    ),
+                    ListTile(
+                      leading: IconButton(onPressed: onLinkClick, icon: Icon(Icons.phonelink)),
+                      title: Text("Link with TV code"),
+                    ),
+                    ListTile(
+                      leading: IconButton(onPressed: onLearnClick, icon: Icon(Icons.info_outline)),
+                      title: Text("Learn more"),
+                    )
+              ],
+            ),
+          );
+        }
+    );
   }
 
   void onSearchClick() {
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context)=>SearchPage()));
+  }
+  void onLinkClick() {
   }
 
-  void onMoreClick() {
+  void onLearnClick() {
   }
 }
