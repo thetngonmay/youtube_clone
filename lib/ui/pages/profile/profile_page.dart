@@ -468,6 +468,13 @@ class ProfilePageState extends State<ProfilePage> {
                     Text("help and feedback", style: TextStyle(fontSize: 17)),
                   ],
                 ),
+                ListTile(
+                  onTap: (){
+                    onLogOut(context);
+                  },
+                  leading: Icon(Icons.logout_outlined),
+                  title: Text("LogOut"),
+                )
               ],
             ),
           ],
@@ -733,6 +740,40 @@ class ProfilePageState extends State<ProfilePage> {
   void onCheckClick() {
     Navigator.push(context,
         MaterialPageRoute(builder: (context)=>DownloadPage()));
+  }
+
+  void onLogOut(BuildContext context) {
+    showDialog(
+        context: context,
+        builder:(BuildContext context){
+          return AlertDialog(
+            title: Text("Log Out"),
+            content: Container(
+              height: 150,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text("Are you sure you want to log out?",),
+                  SizedBox(height: 10,),
+                  Text("This will cancel all your Secret Chats"),
+                  SizedBox(height: 10,),
+                  Text("You can use YouTube on all  your devices at once and use several accounts in the same app."),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
+                  child: Text("Cancel")),
+              TextButton(
+                  onPressed: (){},
+                  child: Text("LogOut"))
+            ],
+          );
+        });
   }
 }
 

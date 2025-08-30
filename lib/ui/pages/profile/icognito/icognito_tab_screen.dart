@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/ui/pages/profile/icognito/home_icognito_page.dart';
+import 'package:youtube_clone/ui/pages/profile/icognito/short_incognito_page.dart';
 import 'package:youtube_clone/ui/pages/profile/icognito/subscriptions_incognito_page.dart';
 import 'package:youtube_clone/ui/pages/profile/icognito/you_page.dart';
 
@@ -34,7 +35,9 @@ class IcognitoTabScreenState extends State<IcognitoTabScreen>{
        onPageChanged: _onTab,
        children: <Widget>[
          HomeIcognitoPage(),
+         ShortIncognitoPage(),
          SubscriptionsIncognitoPage(),
+         YouPage(),
        ],
 
      ),

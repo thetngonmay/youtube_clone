@@ -96,7 +96,7 @@ class MyhomepageState extends State<Myhomepage> {
                 Navigator.pop(context);
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context)=>SettingPage()),);
+                    MaterialPageRoute(builder: (context)=>MusicPage((selectedTab){})),);
               },
             ),
             ListTile(
