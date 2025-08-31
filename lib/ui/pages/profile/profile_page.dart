@@ -25,14 +25,9 @@ class ProfilePageState extends State<ProfilePage> {
       appBar: AppBar(
         actions: [
           IconButton(onPressed: onCastClick, icon: Icon(Icons.cast)),
-          IconButton(
-            onPressed: onNotificationClick,
-            icon: Icon(Icons.notifications_none),
-          ),
+          IconButton(onPressed: onNotificationClick, icon: Icon(Icons.notifications_none),),
           IconButton(onPressed: onSearchClick, icon: Icon(Icons.search)),
-          IconButton(
-            onPressed: onSettingClick,
-            icon: Icon(Icons.settings_outlined),
+          IconButton(onPressed: onSettingClick, icon: Icon(Icons.settings_outlined),
           ),
         ],
       ),
@@ -48,12 +43,7 @@ class ProfilePageState extends State<ProfilePage> {
                   CircleAvatar(
                     radius: 40,
                     backgroundColor: Colors.blue,
-                    child: Text(
-                      "T",
-                      style: TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    child: Text("T", style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold,),
                     ),
                   ),
                   SizedBox(width: 15),
@@ -61,16 +51,9 @@ class ProfilePageState extends State<ProfilePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: 15),
-                      Text(
-                        "thetngon may",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
+                      Text("thetngon may", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25,),
                       ),
-                      Text(
-                        "Create a channel",
-                        style: TextStyle(fontSize: 15, color: Colors.grey),
+                      Text("Create a channel", style: TextStyle(fontSize: 15, color: Colors.grey),
                       ),
                     ],
                   ),
@@ -191,26 +174,15 @@ class ProfilePageState extends State<ProfilePage> {
                     "History",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 20),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      borderRadius: BorderRadius.circular(30),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: 1,
-                          offset: Offset(1, 1),
-                        ),
-                      ],
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.grey[100],
+                      foregroundColor: Colors.black,
+                      padding: EdgeInsets.symmetric(horizontal: 15)
                     ),
-                    child: Row(
-                      children: [
-                        Text("View all", style: TextStyle(fontSize: 18)),
-                      ],
-                    ),
-                  ),
+                    onPressed: onCreateCLick,
+                    child: Text("View all"),
+                  )
                 ],
               ),
             ),
@@ -225,19 +197,21 @@ class ProfilePageState extends State<ProfilePage> {
                 itemCount: 3,
                 itemBuilder: (context, index) {
                   if (index == 3 - 1) {
-                    return Column(
-                      children: [
-                        Expanded(
-                            child: IconButton(
-                              onPressed: () {
-                                onPlusClick(context);
-                              },
-                              icon: Icon(Icons.add),
+                    return GestureDetector(
+                      onTap: (){
+                        onPlusClick(context);
+                      },
+                      child: Column(
+                        children: [
+                          Expanded(
+                              child: CircleAvatar(
+                                child: Icon(Icons.add),
+                              ),
                             ),
-                          ),
-                        Text("New Playlist"),
-                        SizedBox(height: 20),
-                      ],
+                          Text("New Playlist"),
+                          SizedBox(height: 20),
+                        ],
+                      ),
                     );
                   }
                   return Column(
@@ -339,19 +313,21 @@ class ProfilePageState extends State<ProfilePage> {
                 itemCount: 3,
                 itemBuilder: (context, index) {
                   if (index == 3 - 1) {
-                    return Column(
-                      children: [
-                        Expanded(
-                          child: IconButton(
-                            onPressed: () {
-                              onPlusClick(context);
-                            },
-                            icon: Icon(Icons.add),
+                    return GestureDetector(
+                      onTap:  () {
+                        onPlusClick(context);
+                      },
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: CircleAvatar(
+                              child: Icon(Icons.add),
+                            ),
                           ),
-                        ),
-                        Text("New Playlist"),
-                        SizedBox(height: 20),
-                      ],
+                          Text("New Playlist"),
+                          SizedBox(height: 20),
+                        ],
+                      ),
                     );
                   }
                   return Column(
@@ -774,6 +750,9 @@ class ProfilePageState extends State<ProfilePage> {
             ],
           );
         });
+  }
+
+  void onCreateCLick() {
   }
 }
 

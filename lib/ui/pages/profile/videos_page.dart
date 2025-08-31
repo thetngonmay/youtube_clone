@@ -105,28 +105,19 @@ class VideosPageState extends State<VideosPage>{
            ),
          ),
           SizedBox(height: 30,),
-          Container(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 13),
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(30)
-                  ),
-                  child: Row(
-                    children: [
-                      Text("Create",style: TextStyle(color: Colors.white,fontSize: 25),)
-                    ],
-                  ),
-                )
-              ],
+          Center(
+            child: TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                    padding: EdgeInsets.symmetric(horizontal: 30)
+                ),
+                onPressed: onCreateClick,
+                child: Text("Create")
             ),
           )
-        ],
-      ),
+              ],
+            ),
     );
   }
   void onCastClick() {
@@ -165,5 +156,8 @@ class VideosPageState extends State<VideosPage>{
   }
 
   void onLearnClick() {
+  }
+
+  void onCreateClick() {
   }
 }

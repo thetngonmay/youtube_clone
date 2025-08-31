@@ -11,7 +11,7 @@ class DownloadPage extends StatefulWidget {
   final List<Map<String, String>> musicList = [
     {
       'imageUrl':
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo5HufiHe3IoDopISuymHVfXQhnMUjnXpcg&s',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo5HufiHe3IoDopISuymHVfXQhnMUjnXpcg&s',
       'title': 'Some',
       'artist': 'BolBBalgan4',
       'views': '256k views',
@@ -19,7 +19,7 @@ class DownloadPage extends StatefulWidget {
     },
     {
       'imageUrl':
-      'https://i.pinimg.com/736x/fe/c6/e3/fec6e33ee91fd0ed45a1e1ab0164e691.jpg',
+          'https://i.pinimg.com/736x/fe/c6/e3/fec6e33ee91fd0ed45a1e1ab0164e691.jpg',
       'title': '뛰어(JUMP)',
       'artist': 'BLACKPINK ',
       'views': '259k views',
@@ -27,7 +27,7 @@ class DownloadPage extends StatefulWidget {
     },
     {
       'imageUrl':
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1EhruJzbRoxdPR5xjPzyXeeC32NGKcYM7Sg&s',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1EhruJzbRoxdPR5xjPzyXeeC32NGKcYM7Sg&s',
       'title': '바이, 썸머 (Bye summer)',
       'artist': 'IU',
       'views': '795k views',
@@ -35,7 +35,7 @@ class DownloadPage extends StatefulWidget {
     },
     {
       'imageUrl':
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo5HufiHe3IoDopISuymHVfXQhnMUjnXpcg&s',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo5HufiHe3IoDopISuymHVfXQhnMUjnXpcg&s',
       'title': 'Some',
       'artist': 'BolBBalgan4',
       'views': '256k views',
@@ -43,7 +43,7 @@ class DownloadPage extends StatefulWidget {
     },
     {
       'imageUrl':
-      'https://i.pinimg.com/736x/fe/c6/e3/fec6e33ee91fd0ed45a1e1ab0164e691.jpg',
+          'https://i.pinimg.com/736x/fe/c6/e3/fec6e33ee91fd0ed45a1e1ab0164e691.jpg',
       'title': '뛰어(JUMP)',
       'artist': 'BLACKPINK ',
       'views': '259k views',
@@ -51,7 +51,7 @@ class DownloadPage extends StatefulWidget {
     },
     {
       'imageUrl':
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1EhruJzbRoxdPR5xjPzyXeeC32NGKcYM7Sg&s',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1EhruJzbRoxdPR5xjPzyXeeC32NGKcYM7Sg&s',
       'title': '바이, 썸머 (Bye summer)',
       'artist': 'IU',
       'views': '795k views',
@@ -59,7 +59,7 @@ class DownloadPage extends StatefulWidget {
     },
     {
       'imageUrl':
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo5HufiHe3IoDopISuymHVfXQhnMUjnXpcg&s',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmo5HufiHe3IoDopISuymHVfXQhnMUjnXpcg&s',
       'title': 'Some',
       'artist': 'BolBBalgan4',
       'views': '256k views',
@@ -67,7 +67,7 @@ class DownloadPage extends StatefulWidget {
     },
     {
       'imageUrl':
-      'https://i.pinimg.com/736x/fe/c6/e3/fec6e33ee91fd0ed45a1e1ab0164e691.jpg',
+          'https://i.pinimg.com/736x/fe/c6/e3/fec6e33ee91fd0ed45a1e1ab0164e691.jpg',
       'title': '뛰어(JUMP)',
       'artist': 'BLACKPINK ',
       'views': '259k views',
@@ -75,7 +75,7 @@ class DownloadPage extends StatefulWidget {
     },
     {
       'imageUrl':
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1EhruJzbRoxdPR5xjPzyXeeC32NGKcYM7Sg&s',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1EhruJzbRoxdPR5xjPzyXeeC32NGKcYM7Sg&s',
       'title': '바이, 썸머 (Bye summer)',
       'artist': 'IU',
       'views': '795k views',
@@ -83,7 +83,7 @@ class DownloadPage extends StatefulWidget {
     },
     {
       'imageUrl':
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1EhruJzbRoxdPR5xjPzyXeeC32NGKcYM7Sg&s',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1EhruJzbRoxdPR5xjPzyXeeC32NGKcYM7Sg&s',
       'title': '바이, 썸머 (Bye summer)',
       'artist': 'IU',
       'views': '795k views',
@@ -91,13 +91,14 @@ class DownloadPage extends StatefulWidget {
     },
     {
       'imageUrl':
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1EhruJzbRoxdPR5xjPzyXeeC32NGKcYM7Sg&s',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1EhruJzbRoxdPR5xjPzyXeeC32NGKcYM7Sg&s',
       'title': '바이, 썸머 (Bye summer)',
       'artist': 'IU',
       'views': '795k views',
       'time': ' 5 month ago',
     },
   ];
+
   @override
   State<StatefulWidget> createState() {
     return DownloadPageState();
@@ -114,76 +115,77 @@ class DownloadPageState extends State<DownloadPage> {
           children: [
             BackButton(),
             Padding(
-                padding: EdgeInsets.all(8),
-              child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoiMtJG_PC4lsb3-GZAiTZkUXAm3VlkJC1Ag&s",
-              width: 35,
-              height: 30,
+              padding: EdgeInsets.all(8),
+              child: Image.network(
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoiMtJG_PC4lsb3-GZAiTZkUXAm3VlkJC1Ag&s",
+                width: 35,
+                height: 30,
               ),
             ),
-        ]
+          ],
         ),
         title: Text("Downloads"),
         actions: [
-          IconButton(onPressed:()=> onCastClick(context), icon: Icon(Icons.cast)),
+          IconButton(
+            onPressed: () => onCastClick(context),
+            icon: Icon(Icons.cast),
+          ),
           IconButton(onPressed: onSearchClick, icon: Icon(Icons.search)),
-        PopupMenuButton<String>(
-          onSelected: (String result){
-            if(result=='setting'){
-              Navigator.push(
+          PopupMenuButton<String>(
+            onSelected: (String result) {
+              if (result == 'setting') {
+                Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context)=>SettingPage())
-              );
-            }
-            else if(result=='tv'){
-              Navigator.push(
+                  MaterialPageRoute(builder: (context) => SettingPage()),
+                );
+              } else if (result == 'tv') {
+                Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context)=>WatchOnPage()));
-            }
-            else if(result=='tc'){
-              Navigator.push(
+                  MaterialPageRoute(builder: (context) => WatchOnPage()),
+                );
+              } else if (result == 'tc') {
+                Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context)=>PrivacyPage()));
-            }
-            else if(result=='help'){
-              Navigator.push(
+                  MaterialPageRoute(builder: (context) => PrivacyPage()),
+                );
+              } else if (result == 'help') {
+                Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context)=>HelpPage()));
-            }
-          },
+                  MaterialPageRoute(builder: (context) => HelpPage()),
+                );
+              }
+            },
 
-          itemBuilder: (BuildContext context)=> <PopupMenuEntry<String>>[
-            const PopupMenuItem<String>(
-              value: 'setting',
-              child: Text('Setting'),
-            ),
-            const PopupMenuItem<String>(
-              value: 'tv',
-              child: Text('Watch on TV'),
-            ),
-            const PopupMenuItem<String>(
-              value: 'tc',
-              child: Text('Terms and privacy policy'),
-            ),
-            const PopupMenuItem<String>(
-              value: 'help',
-              child: Text('Help and feedback'),
-            )
-          ],
+            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+              const PopupMenuItem<String>(
+                value: 'setting',
+                child: Text('Setting'),
+              ),
+              const PopupMenuItem<String>(
+                value: 'tv',
+                child: Text('Watch on TV'),
+              ),
+              const PopupMenuItem<String>(
+                value: 'tc',
+                child: Text('Terms and privacy policy'),
+              ),
+              const PopupMenuItem<String>(
+                value: 'help',
+                child: Text('Help and feedback'),
+              ),
+            ],
           ),
         ],
       ),
 
       body: SingleChildScrollView(
-        child:Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-        Padding(
-        padding: EdgeInsets.all(15),
-        child: Text(
-          "Your downloads",
-          style: TextStyle(fontSize: 17),
-        ),
-      ),
+          children: [
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: Text("Your downloads", style: TextStyle(fontSize: 17)),
+            ),
             ListView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
@@ -193,11 +195,12 @@ class DownloadPageState extends State<DownloadPage> {
                 return _buildMusicItem(widget.musicList[index]);
               },
             ),
-      ],
+          ],
         ),
-          ),
+      ),
     );
-    }
+  }
+
   Widget _buildMusicItem(Map<String, String> music) {
     return Container(
       margin: EdgeInsets.only(top: 16),
@@ -228,9 +231,7 @@ class DownloadPageState extends State<DownloadPage> {
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text("4:12"),
-                      ],
+                      children: [Text("4:12")],
                     ),
                   ),
                 ),
@@ -245,7 +246,6 @@ class DownloadPageState extends State<DownloadPage> {
                 Text(
                   music['title']!,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-
                 ),
                 SizedBox(height: 4),
                 Text(
@@ -260,64 +260,74 @@ class DownloadPageState extends State<DownloadPage> {
               ],
             ),
           ),
-          IconButton(onPressed: ()=>
-            onMoreClick(context), icon: Icon(Icons.more_vert_outlined),
+          IconButton(
+            onPressed: () => onMoreClick(context),
+            icon: Icon(Icons.more_vert_outlined),
           ),
         ],
       ),
     );
   }
-  }
-  void onCastClick(BuildContext context) {
+}
+
+void onCastClick(BuildContext context) {
   showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context){
-        return Container(
-          width: double.infinity,
-          height: 200,
-          child: Row(
-            children: [
-              ListTile(
-          title: Text("Select a device"),
+    context: context,
+    builder: (BuildContext context) {
+      return Container(
+        width: double.infinity,
+        height: 200,
+        child: Column(
+          children: [
+            ListTile(title: Text("Select a device")),
+            ListTile(
+              leading: IconButton(
+                onPressed: onLinkClick,
+                icon: Icon(Icons.phonelink),
+              ),
+              title: Text("Link with TV code"),
+            ),
+            ListTile(
+              leading: IconButton(
+                onPressed: onLearnClick,
+                icon: Icon(Icons.info_outline),
+              ),
+              title: Text("Learn more"),
+            ),
+          ],
         ),
-        ListTile(
-        leading: IconButton(onPressed: onLinkClick, icon: Icon(Icons.phonelink)),
-        title: Text("Link with TV code"),
+      );
+    },
+  );
+}
+
+void onSearchClick() {}
+
+void onMoreClick(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    builder: (BuildContext context) {
+      return Container(
+        width: double.infinity,
+        height: 100,
+        child: Row(
+          children: [
+            ListTile(
+              leading: IconButton(
+                onPressed: onDeleteClick,
+                icon: Icon(Icons.delete_outline),
+              ),
+              title: Text("Delete from downloads"),
+            ),
+          ],
         ),
-        ListTile(
-        leading: IconButton(onPressed: onLearnClick, icon: Icon(Icons.info_outline)),
-        title: Text("Learn more"),
-        )
-            ],
-          ),
-        );
-
-      });
-  }
-  void onSearchClick() {}
-  void onMoreClick(BuildContext context) {
-  showModalBottomSheet(context: context,
-      builder: (BuildContext context){
-    return Container(
-      width: double.infinity,
-      height: 100,
-      child: Row(
-        children: [
-          ListTile(
-            leading: IconButton(onPressed:onDeleteClick, icon: Icon(Icons.delete_outline)),
-            title: Text("Delete from downloads"),
-          )
-        ],
-      ),
-    );
-      });
-  }
-
-void onDeleteClick() {
-
-}
-void onLinkClick() {
+      );
+    },
+  );
 }
 
-void onLearnClick() {
-}
+void onDeleteClick() {}
+
+void onLinkClick() {}
+
+void onLearnClick() {}

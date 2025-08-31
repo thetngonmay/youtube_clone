@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MusicListView extends StatefulWidget {
@@ -92,11 +91,11 @@ class MusicPageState extends State<MusicListView> {
   Widget _buildMusicItem(Map<String, String> music) {
     return Container(
       margin: EdgeInsets.only(top: 16),
-      child: Row(
+      child: Column(
         children: [
           Container(
-            width: 150,
-            height: 90,
+            width: double.infinity,
+            height: 180,
             decoration: BoxDecoration(
               color: Colors.grey[200],
               borderRadius: BorderRadius.circular(8),
@@ -130,33 +129,37 @@ class MusicPageState extends State<MusicListView> {
             ),
           ),
           SizedBox(width: 20),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  music['title']!,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      music['title']!,
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
 
+                    ),
+                    SizedBox(height: 4),
+                    Text(
+                      music['artist']!,
+                      style: TextStyle(color: Colors.grey[600], fontSize: 14),
+                    ),
+                    SizedBox(height: 4),
+                    Text(
+                      '${music['views']} - ${music['time']}',
+                      style: TextStyle(color: Colors.grey[500], fontSize: 12),
+                    ),
+                  ],
                 ),
-                SizedBox(height: 4),
-                Text(
-                  music['artist']!,
-                  style: TextStyle(color: Colors.grey[600], fontSize: 14),
-                ),
-                SizedBox(height: 4),
-                Text(
-                  '${music['views']} - ${music['time']}',
-                  style: TextStyle(color: Colors.grey[500], fontSize: 12),
-                ),
-              ],
-            ),
-          ),
-          IconButton(
-            onPressed: (){
-              onMoreClick(context);
-            },
-            icon: Icon(Icons.more_vert_outlined),
+              ),
+              IconButton(
+                onPressed: (){
+                  onMoreClick(context);
+                },
+                icon: Icon(Icons.more_vert_outlined),
+              ),
+            ],
           ),
         ],
       ),

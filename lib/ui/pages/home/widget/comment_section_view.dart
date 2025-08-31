@@ -36,8 +36,7 @@ class CommentSectionView extends StatelessWidget{
             child: Text("M"),
             backgroundColor: Colors.blue,
             ),
-            SizedBox(
-            width: 10),
+            SizedBox(width: 10),
             Expanded(
             child: Text("Like this song",style: TextStyle(fontSize: 15),
             ),

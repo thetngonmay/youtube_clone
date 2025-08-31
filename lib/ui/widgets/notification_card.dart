@@ -23,7 +23,6 @@ class NotificationCard extends StatelessWidget{
                   CircleAvatar(
                     backgroundImage: CachedNetworkImageProvider(data.channelProfileUrl),
                   ),
-
                   Expanded(
                     child: Container(
                       padding: EdgeInsets.only(left: 10),

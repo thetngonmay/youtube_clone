@@ -12,7 +12,8 @@ class SocialActions extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.zero,
-              decoration: BoxDecoration(color: Colors.grey[100],
+              decoration: BoxDecoration(
+                color: Colors.grey[100],
                 borderRadius: BorderRadius.circular(30),
                 boxShadow: [BoxShadow(
                     color: Colors.black12,
@@ -59,7 +60,8 @@ class SocialActions extends StatelessWidget {
             Container(
               padding: EdgeInsets.zero,
               alignment: Alignment.center,
-              decoration: BoxDecoration(color: Colors.grey[100],
+              decoration: BoxDecoration(
+                color: Colors.grey[100],
                 borderRadius: BorderRadius.circular(30),
                 boxShadow: [BoxShadow(
                     color: Colors.black12,

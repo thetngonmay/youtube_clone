@@ -4,6 +4,7 @@ import 'package:youtube_clone/ui/pages/home/drawer/music_page.dart';
 import 'package:youtube_clone/ui/pages/home/widget/home_top_tab.dart';
 import 'package:youtube_clone/ui/pages/profile/profile_page.dart';
 import 'package:youtube_clone/ui/pages/setting/setting_page.dart';
+import 'package:youtube_clone/ui/pages/upload/upload_screen.dart';
 import 'package:youtube_clone/ui/widgets/music_card.dart';
 
 import '../notification/notification_page.dart';
@@ -70,6 +71,13 @@ class MyhomepageState extends State<Myhomepage> {
           IconButton(onPressed: onNotiClick, icon: Icon(Icons.notifications_none)),
           IconButton(onPressed: onSettingClick, icon: Icon(Icons.settings)),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context)=>UploadScreen()));
+          },
+        child: Icon(Icons.add),
       ),
       drawer: Drawer(
         child: ListView(
