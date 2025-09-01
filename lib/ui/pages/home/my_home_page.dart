@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/model/music_model.dart';
-import 'package:youtube_clone/ui/pages/home/drawer/music_page.dart';
+import 'package:youtube_clone/ui/pages/home/drawer/live_page.dart';
+import 'package:youtube_clone/ui/pages/home/drawer/music/music_page.dart';
 import 'package:youtube_clone/ui/pages/home/widget/home_top_tab.dart';
 import 'package:youtube_clone/ui/pages/profile/profile_page.dart';
 import 'package:youtube_clone/ui/pages/setting/setting_page.dart';
@@ -114,7 +115,7 @@ class MyhomepageState extends State<Myhomepage> {
                 Navigator.pop(context);
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context)=>SettingPage()));
+                    MaterialPageRoute(builder: (context)=>LivePage()));
               },
             ),
             ListTile(
