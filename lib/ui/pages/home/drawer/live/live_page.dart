@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/ui/pages/home/drawer/live/live_list_view.dart';
+import 'package:youtube_clone/ui/pages/home/drawer/live/live_slider.dart';
 import 'package:youtube_clone/ui/pages/profile/download_page.dart';
 
-import '../../setting/help_page.dart' show HelpPage;
-import '../../setting/privacy_page.dart' show PrivacyPage;
-import '../../setting/setting_page.dart' show SettingPage;
-import '../../setting/watch_on_page.dart' show WatchOnPage;
+import '../../../../../model/live_list_model.dart' show LiveListModel;
+import '../../../setting/help_page.dart' show HelpPage;
+import '../../../setting/privacy_page.dart' show PrivacyPage;
+import '../../../setting/setting_page.dart' show SettingPage;
+import '../../../setting/watch_on_page.dart' show WatchOnPage;
 
 class LivePage extends StatefulWidget{
   final List<Map<String,String >>liveList=[
@@ -18,6 +21,38 @@ class LivePage extends StatefulWidget{
   }
 
 }
+List <LiveListModel> yiboDataList = [
+  LiveListModel(
+      'https://i.pinimg.com/736x/50/00/64/500064c3e16d2953f6c64b265a2e5b8d.jpg',
+      '我在 I AM NOT HERE',
+      ' I AM NOT HERE, but I will always be here.',
+      '31M '
+  ),
+  LiveListModel(
+      'https://images.genius.com/54383ca594c70bd823b73dbc8ae679ed.872x872x1.jpg',
+      '我在 I AM NOT HERE',
+      ' I AM NOT HERE, but I will always be here.',
+      '31M '
+  ),
+  LiveListModel(
+      'https://i1.sndcdn.com/artworks-0C0EYTlczf1d8XnJ-ZaChzw-t500x500.jpg',
+      '王一博单曲合集',
+      ' Songs of Wang Yibo (Single/EP) 王一博单曲合集.',
+      '50.9K '
+  ),
+  LiveListModel(
+      'https://kingchoice.me/media/CACHE/images/96757f27b12c80d5e20df95fa4f5d591_mR7qzIg/8da0c6e9487c550853ef70a05f19881e.jpg',
+      'SINGLES',
+      ' The Rules of My World (2020) US World top 14 (peak chart position) 3.',
+      '31M '
+  ),
+  LiveListModel(
+      'https://viberate-upload.ams3.cdn.digitaloceanspaces.com/prod/entity/artist/xiao-zhan-xiao-zhan-aF8FG',
+      '肖战Xiao Zhan',
+      ' 漂流Life of Us',
+      '36M '
+  ),
+];
 class LivePageState extends State<LivePage>{
   @override
   Widget build(BuildContext context) {
@@ -72,8 +107,7 @@ class LivePageState extends State<LivePage>{
             )
           ],
         ),
-        body: SingleChildScrollView(
-          child: Column(
+        body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -97,35 +131,20 @@ class LivePageState extends State<LivePage>{
                   ],
                 ),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                      padding: EdgeInsets.only(left: 8),
-                    child: Row(
-
+              Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        LiveSlider(),
+                        LiveListView(listName: "Live now", data: yiboDataList,),
+                      ],
                     ),
                   )
-                ],
               )
             ],
-          ),
         ),
+
     );
   }
-
 }
-
-// Widget _buildLiveItem(Map<String,String>live){
-//
-//   return ListView.builder(
-//       physics: NeverScrollableScrollPhysics(),
-//       shrinkWrap: true,
-//       padding: EdgeInsets.only(left: 15, right: 15),
-//       itemCount: widget.liveList.length,
-//       itemBuilder: (context, index) {
-//         return _buildLiveItem(widget.liveList[index]);
-//       }
-//   );
-// }

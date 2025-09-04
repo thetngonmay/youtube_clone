@@ -146,7 +146,6 @@ class MusicSliderViewState extends State<MusicSliderView>{
                                       ),
                                     ),
                                   ),
-                                  SizedBox(width: 100,)
                                 ],
                               )
                             ],
